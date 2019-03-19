@@ -1,0 +1,93 @@
+html {
+	background-image: url("746134.jpg");
+	background-attachment: fixed;
+	background-size: 100% 100%;
+	background-color: rgb(20, 50, 100);
+	text-decoration-color: rgb(0, 0, 0);
+	color: white;
+}
+
+body {
+    margin: 0px;
+}
+
+.topnav {
+    position: fixed;
+    top: 0px;
+    z-index: 2;
+    font-size: 20px;
+    width: 100%;
+    letter-spacing: 1px;
+}
+
+.topFlex {
+	display: flex;
+	filter: drop-shadow(0 0 50px rgb(255,0, 0));
+}
+
+.topFlex > div {
+	flex: 1;
+    background-color: rgb(0,30,220);
+    padding: 20px;
+    text-align: center;
+}
+
+.logRegisterButtons {
+	display: grid;
+    grid-template-rows: 50px 50px;
+    grid-gap: 5px;
+}
+
+.logRegisterButtons > div > a.button {
+  position: fixed;
+	width: 150px;
+	height: 50px;
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    text-decoration: none;
+}
+
+.logRegButton {
+	position: fixed;
+	width: 150px;
+	height: 50px;
+}
+
+.imageTitle {
+	display: flex;
+	flex: 1;
+	font-family: Castellar, "Times New Roman";
+	font-size: 26px;
+}
+
+.titleText {
+	padding: 10px;
+}
+
+.presentationBox {
+	display: flex;
+}
+
+.presentationBox > div {
+	flex: 1;
+	padding: 15px;
+	background-color: rgb(0,100,200);
+	border-radius: 20px;
+	color: rgb(200, 250, 200);
+	font-size: 30px;
+}
+
+.presentationBox > div > p {
+	font-family: Helvetica, serif;
+}
+
+
+.gitStatistic {
+	display: flex;
+}
+
+.gitStatistic > div {
+	flex: 1;
+	padding: 15px;
+	font-size: 30px;
+}
