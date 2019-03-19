@@ -1,5 +1,5 @@
 body{
-	background-color: #454545;
+	background-color: #282828; /* #454545*/
 }
 
 .sexy { 
@@ -12,12 +12,12 @@ body{
 
 .label_login{
 	position: absolute;
-	font-family: Castellar;
+	font-family: Segoe UI;
 	color: white;
 	padding: 8px;
-	top: 37%;
+	top: 34%;
 	left: 39.5%;
-	font-size: 30px;
+	font-size: 50px;
 }
 
 .logo{
@@ -32,34 +32,67 @@ body{
 
 /* -------- btn class with its subclasses --------*/
 
-.btn:hover{
-	background-color: #c8c8c8;
-	cursor: pointer;
+.btn {
+  position: absolute;
+  display:block;
+  background-color: #383736;
+  top: 55%;
+  left: 43%;
+  height: 45px;
+  width: 150px;
+  margin: 10px 7px;
+  padding: 5px 5px;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: whitesmoke;
+  border: 2px #383736 solid;
+  border-radius: 4px;
+  text-transform: uppercase;
+  outline: 0;
+  overflow:hidden;
+  background: none;
+  z-index: 1;
+  cursor: pointer;
+  transition:         0.08s ease-in;
+  -o-transition:      0.08s ease-in;
+  -ms-transition:     0.08s ease-in;
+  -moz-transition:    0.08s ease-in;
+  -webkit-transition: 0.08s ease-in;
 }
 
-.Register{
-	position: absolute;
-	border-radius: 10px 20px;
-	text-align: center;
-	font-size: 16px;
-	top: 57%;
-	left: 50%;
-	width: 105px;
+.Login:before {
+  content: "";
+  position: absolute;
+  background: #383736;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: -1;
+  -webkit-transition: top 0.09s ease-in;
 }
 
-.Login {
-	background-color: white;
-	position: absolute;
-	border-radius: 20px 10px;
-	text-align: center;
-	font-size: 16px;
-
-	top: 57%;
-	left: 40%;
-	width: 100px;
+.Login:hover:before {
+  top: 0;
 }
 
 /* -------- End of subclasses --------*/
+
+.text {
+	color: white;
+	font-size: 20px;
+	font-family: Segoe UI;
+	position: absolute;
+	top: 65%;
+	left: 27%;
+}
+
+.link_reg{
+	position: relative;
+	left: 0%;
+	color: cornflowerblue;
+}
 
 .inp {
 	position: absolute;
@@ -92,6 +125,7 @@ body{
   background-color: #8c8c8c;
   color: white;
   text-align: center;
+  font-family: Segoe UI;
 }
 
 .Motto {
@@ -105,9 +139,13 @@ body{
 
 .square {
 	position: absolute;
-	top: 30%;
+	font-family: Segoe UI;
+	font-size: 30px;
+	top: 16%;
 	width: 120px;
 	height: 50px;
+	text-align: center;
+	color: white;
 }
 
 .square:hover
@@ -117,28 +155,14 @@ body{
 }
 
 .More{
-	position: absolute;
-	text-align: center;
-	top: 20%;
+	top: 12%;
 	left: 65%;
-	color: white;
-	font-size: 20px;
 }
 
 .Events{
-	position: absolute;
-	text-align: center;
-	top: 20%;
 	left: 45%;
-	color: white;
-	font-size: 20px;
 }
 
 .Etc{
-	position: absolute;
-	text-align: center;
-	top: 20%;
 	left: 25%;
-	color: white;
-	font-size: 20px;
 }
