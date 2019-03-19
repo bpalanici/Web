@@ -1,0 +1,144 @@
+body{
+	background-color: #454545;
+}
+
+.sexy { 
+    margin: 170px 0;
+    height: 1px;
+    background: red;
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(#1d4545), 
+    	to(#1d4545), color-stop(50%, white));
+}
+
+.label_login{
+	position: absolute;
+	font-family: Castellar;
+	color: white;
+	padding: 8px;
+	top: 37%;
+	left: 39.5%;
+	font-size: 30px;
+}
+
+.logo{
+	position: absolute;
+	top: 5%;
+	left: 3%;
+}
+
+.logo:hover {
+	cursor: pointer;
+}
+
+/* -------- btn class with its subclasses --------*/
+
+.btn:hover{
+	background-color: #c8c8c8;
+	cursor: pointer;
+}
+
+.Register{
+	position: absolute;
+	border-radius: 10px 20px;
+	text-align: center;
+	font-size: 16px;
+	top: 57%;
+	left: 50%;
+	width: 105px;
+}
+
+.Login {
+	background-color: white;
+	position: absolute;
+	border-radius: 20px 10px;
+	text-align: center;
+	font-size: 16px;
+
+	top: 57%;
+	left: 40%;
+	width: 100px;
+}
+
+/* -------- End of subclasses --------*/
+
+.inp {
+	position: absolute;
+	width: 250px;
+	left: 40%;
+}
+
+.ID {
+	top: 45%;
+}
+
+.Password {
+	top:50%;
+}
+
+.Login-image{
+	position: absolute;
+	top: 35%;
+	left: 26%;
+	height: 200px;
+	width: 200px;
+}
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 5px;
+  background-color: #8c8c8c;
+  color: white;
+  text-align: center;
+}
+
+.Motto {
+	position: absolute;
+	color: White;
+	font-size: 45px;
+	font-family: Castellar;
+	top: 3%;
+	left: 16%;
+}
+
+.square {
+	position: absolute;
+	top: 30%;
+	width: 120px;
+	height: 50px;
+}
+
+.square:hover
+{
+	cursor: pointer;
+	opacity: 0.7;
+}
+
+.More{
+	position: absolute;
+	text-align: center;
+	top: 20%;
+	left: 65%;
+	color: white;
+	font-size: 20px;
+}
+
+.Events{
+	position: absolute;
+	text-align: center;
+	top: 20%;
+	left: 45%;
+	color: white;
+	font-size: 20px;
+}
+
+.Etc{
+	position: absolute;
+	text-align: center;
+	top: 20%;
+	left: 25%;
+	color: white;
+	font-size: 20px;
+}
