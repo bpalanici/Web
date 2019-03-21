@@ -1,55 +1,43 @@
 <!DOCTYPE html>
 
-<html lang="en">
-<head>
-	<meta charset="utf-8"/>
+<html>
 	<link rel="icon" href="Images/Logo.png">
-	<link rel="stylesheet" type="text/css" href=CSS/register-style.css>
-
-	<title>Register :: Technical Skill Enhancer</title>
+	<link rel="stylesheet" type="text/css" href=CSS/login-style.css>
+<head>
+	<title>Login :: Technical Skill Enhancer</title>
 </head>
-<body>
-	<a href="index.html">
-		<img class="logo" src="Images/Logo.png" alt="logo-infinity" height="120" width="120">
-	</a>
+	<body>
+		<div class="line"></div>
+		<a href="index.html">
+			<img class="logo" src="Images/Logo.png" alt="logo-infinity" height="120" width="120">
+		</a>
 
-	<img class="Login-image" src="Images/login-lock.png" alt="login" height="120" width="120">
-	  <div class="sexy"></div>
-
-	<div>
-		<span class="label_login">REGISTER</span>
-		<!--<span class="Motto">DEVELOPED BY STUDENTS FOR STUDENTS.</span>-->
-	</div>
-
-	<a href="index.html">
-		<div class="square More">More about us</div>
-	</a>
-
-	<a href="index.html">
-		<div class="square Events">
-			Events
+		<div class="container-header">
+			<a href="index.html" class="Tab">Events</a>
+			<a href="index.html" class="Tab">More about us</a>
+				<!--<a href="index.html" class="Etc">Etc</a>-->
 		</div>
-	</a>
 
-	<a href="index.html">
-		<div class="square Etc">
-			Etc
+		
+		
+		<div class="container-Login">
+			<div class="label"></div>
+			<div class="label"></div>
+
+			<img class="Login-image" src="Images/login-lock.png" alt="login" height="120" width="120">
+			<div class="text">Already have an account? What are you waiting for, click <a href="login.html" class="link">here!</a></div>
+
+			<input class="input" type="text" name="ID" placeholder="Username" required=""><br>
+			<input class="input" type="text" name="Email" placeholder="jonathan@email.wiz" required=""><br>
+			<input class="input" type="password" name="Password" placeholder="Password" required=""><br>
+			<input class="input" type="password" name="CPassword" placeholder="Confirm password" required=""><br>
+
+			<a href="index.html"><div class="button">Register</div></a>
+			<div class="label"></div>
 		</div>
-	</a>
 
-	<a href="index.html">
-		<button class="btn Register">Register</button>
-	</a>
-
-	<input class="inp ID" type="text" name="ID" placeholder="Username" required=""><br>
-	<input class="inp Email" type="text" name="ID" placeholder="jonathan@email.com" required=""><br>
-	<input class="inp Password" type="password" name="Password" placeholder="Password" required=""><br>
-	<input class="inp ConfirmPassword" type="password" name="Password" placeholder="Confirm password" required=""><br>
-
-	<span class="text Login">Already have an account? Click <a href="login.html" class="text link_login">here!</a></span>
-
-	<div class="footer">
-		Show us your GitHub account and based on that, we will help you improve your knowledge and understanding of algorithms, coding tricks. Also, we will sugest events/talks, git repositories for you to learn from, track your progress and test you along the way.
-	</div>
-</body>
+		<div class="container-footer">
+			Show us your GitHub account and based on that, we will help you improve your knowledge and understanding of algorithms, coding tricks. Also, we will sugest events/talks, git repositories for you to learn from, track your progress and test you along the way.
+		</div>
+	</body>
 </html>
