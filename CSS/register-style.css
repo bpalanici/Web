@@ -15,8 +15,8 @@ body{
 	top: 10%;
     height: 1px;
     background: red;
-    background: -webkit-gradient(linear, 0 0, 100% 0, from(#1d4545), 
-    	to(#1d4545), color-stop(50%, white));
+    /*background: -webkit-gradient(linear, 0 0, 100% 0, from(#1d4545), 
+    	to(#1d4545), color-stop(50%, white));*/
 }
 
 .logo{
@@ -101,7 +101,7 @@ body{
 
 .Login-image{
 	flex: 1;
-	align-self: right;
+	align-self: center;
 	height: 200px;
 	width: 200px;
 }
