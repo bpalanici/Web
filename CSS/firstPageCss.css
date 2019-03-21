@@ -16,7 +16,7 @@ body {
 	filter: drop-shadow(0 0 50px rgb(255,0, 0));
 	position: fixed;
     top: 0px;
-    z-index: 2;
+    z-index: 999;
     font-size: 20px;
     width: 100%;
     letter-spacing: 1px;
@@ -31,11 +31,12 @@ body {
 
 .logRegisterButtons {
 	display: grid;
-    grid-template-rows: 50px 50px;    grid-gap: 5px;
+    grid-template-rows: 50px 50px;    
+    grid-gap: 5px;
 }
 
 .logRegisterButtons > div > a.button {
-  position: fixed;
+  	position: fixed;
 	width: 150px;
 	height: 50px;
     -webkit-appearance: button;
@@ -56,8 +57,10 @@ body {
 	font-size: 26px;
 }
 
-.titleText {
-	padding: 10px;
+.imageTitleImage {
+	display: block;
+	height: 120px;
+	width: 200px;
 }
 
 .presentationBox {
@@ -76,7 +79,6 @@ body {
 .presentationBox > div > p {
 	font-family: Helvetica, serif;
 }
-
 
 .gitStatistic {
 	display: grid;
@@ -109,10 +111,48 @@ body {
   position: absolute;
   right: 0;
   left: 0;
-
-  padding: 5px;
-  background-color: #8c8c8c;
-  color: white;
+  background-color: rgb(140, 140, 140);
   text-align: center;
   font-family: Segoe UI;
+}
+
+@media only screen and (max-width: 767px) {
+  .topFlex {
+    font-size: 20px;
+    letter-spacing: 0.7px;
+}
+
+.titleText {
+	padding: 3px;
+}
+
+.topFlex > div {
+    padding: 5px;
+    text-align: left;
+}
+
+.logRegisterButtons {
+    grid-template-rows: 50px 50px;    
+    grid-gap: 0px;
+}
+
+.logRegisterButtons > div > a.button {
+	width: 60px;
+	height: 30px;
+	font-size: 13px;
+}
+
+.imageTitle {
+	font-size: 15px;
+}
+
+.imageTitleImage {
+	height: 60px;
+	width: 120px;
+}
+
+.presentationBox > div {
+	font-size: 15px;
+}
+
 }
