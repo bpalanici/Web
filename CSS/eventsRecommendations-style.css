@@ -112,14 +112,7 @@ nav a:hover::after{
 width: 100%;
 }
 
-.flexContainer {
-    display: flex;
-    flex-direction: row;
-    min-width: 100px;
-}
-
-#main {
-    text-align: center;
+.main {
     padding: 10px;
 }
 .list {
@@ -127,9 +120,10 @@ width: 100%;
     border: 1px rgb(204, 204, 204);
     border-radius: 10px;
     display: inline-block;
-    max-height: 450px;
+    max-height: 500px;
     max-width: 240px;
     background-color: yellow;
+
 }
 .list-header {
     padding: 8px 4px;
@@ -137,7 +131,7 @@ width: 100%;
     min-height: 19px;
     display: block;
     line-height: 18px;
-    text-align: left;
+    text-align: center;
 }
 .list-title {
     cursor: pointer;
@@ -148,35 +142,38 @@ width: 100%;
     margin: 0px;
     min-height: 19px;
     min-width: 30px;
-    overflow: hidden;
-    text-overflow: ellipsis;
     word-wrap: break-word;
     color: rgb(77, 77, 77);
 }
 .card-list {
-	max-height: 450px;
+    max-height: 450px;
     overflow-y: auto;
     overflow-x: visible;
 }
 .card {
     overflow: auto;
     padding: 6px 8px 4px;
+
     margin-bottom: 4px;
+    margin-left: 4px;
+    margin-right: 5px;
+
     position: relative;
     display: block;
     cursor: pointer;
-    color: rgb(77, 77, 77);
-    font-size: 14px;
-    line-height: 18px;
-    border: 1px solid rgb(204, 204, 204);
+
+    font-size: 15px;
+    line-height: 30px;
+
+    border: 1px solid gray;
     border-radius: 4px;
-    width: 214px;
+
+    width: 200px;
     text-align: left;
-    background-color: rgb(255, 255, 255);
+    background-color: white;
 }
 .card-title {
     color: rgb(77, 77, 77);
-    clear: both;
     display: block;
     font-weight: 400;
     margin: 0px 0px 4px;
@@ -184,6 +181,11 @@ width: 100%;
     text-decoration: none;
     word-wrap: break-word;
     background-color: transparent;
+}
+.flexContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 @media only screen and (max-width: 1440px)  {
