@@ -116,12 +116,12 @@ width: 100%;
     padding: 10px;
 }
 .list {
-    margin: 5px;
+    margin right: 5px;
     border: 1px rgb(204, 204, 204);
     border-radius: 10px;
     display: inline-block;
     max-height: 500px;
-    max-width: 240px;
+    width: 420px;
     background-color: yellow;
 
 }
@@ -146,9 +146,9 @@ width: 100%;
     color: rgb(77, 77, 77);
 }
 .card-list {
-    max-height: 450px;
+    max-height: 445px;
     overflow-y: auto;
-    overflow-x: visible;
+    overflow-x: none;
 }
 .card {
     overflow: auto;
@@ -156,7 +156,6 @@ width: 100%;
 
     margin-bottom: 4px;
     margin-left: 4px;
-    margin-right: 5px;
 
     position: relative;
     display: block;
@@ -168,7 +167,7 @@ width: 100%;
     border: 1px solid gray;
     border-radius: 4px;
 
-    width: 200px;
+    width: 380px;
     text-align: left;
     background-color: white;
 }
@@ -186,6 +185,27 @@ width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+.flexInsideCard{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.buttonCard{
+    width: 60px;
+    height: 30px;
+    padding-top: 4px;
+    background-color: rgb(255, 100, 0);
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+}
+.buttonCard:hover{
+    background-color: rgb(255, 5, 0);
 }
 
 @media only screen and (max-width: 1440px)  {
@@ -193,7 +213,6 @@ width: 100%;
 nav ul {
     margin-top: 30px;
     margin-right: 70px;
-
 }
 
 }
