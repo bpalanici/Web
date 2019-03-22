@@ -1,4 +1,4 @@
-html, body, div, span, applet, object, iframe,
+body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -46,8 +46,6 @@ html {
 	background-image: url("../Images/background.jpg");
 	background-attachment: fixed;
 	background-size: 100% 100%;
-	background-color: rgb(20, 50, 100);
-	text-decoration-color: rgb(0, 0, 0);
 	color: white;
 }
 header {
@@ -55,14 +53,12 @@ header {
 	height: 150px;
 	width: 100%;
 }
+body{
+	margin: 0px;
+}
 .imgHeader {
 	margin-top: 20px;
 	margin-left: 20px;
-}
-
-.logRegisterButtons {
-	display: grid;
-    grid-template-rows: 50px 50px;    grid-gap: 5px;
 }
 .headerTitle {
 	padding: 10px;
@@ -72,10 +68,9 @@ header {
 }
 .imageTitle {
 	display: flex;
-	flex: 1;
 	font-family: Castellar, "Times New Roman";
 	font-size: 26px;
-	float: left;	
+	float: left;
 }
 
 nav {
@@ -96,7 +91,7 @@ position: relative;
 
 a{
 	text-decoration: none;
-	color: lightblue;
+	color: white;
 	text-transform: uppercase;
 }
 nav a:hover {
@@ -115,4 +110,78 @@ nav a::after{
 
 nav a:hover::after{
 width: 100%;
+}
+
+#main {
+    text-align: center;
+    padding: 10px;
+}
+.list {
+    margin: 5px;
+    border: 1px rgb(204, 204, 204);
+    border-radius: 10px;
+    display: inline-block;
+    max-height: 450px;
+    max-width: 240px;
+    background-color: yellow;
+}
+.list-header {
+    padding: 8px 4px;
+    position: relative;
+    min-height: 19px;
+    display: block;
+    line-height: 18px;
+    text-align: left;
+}
+.list-title {
+    cursor: pointer;
+    display: inline;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 18px;
+    margin: 0px;
+    min-height: 19px;
+    min-width: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    color: rgb(77, 77, 77);
+}
+.card-list {
+	max-height: 450px;
+    overflow-y: auto;
+    overflow-x: visible;
+}
+.card {
+    overflow: auto;
+    padding: 6px 8px 4px;
+    margin-bottom: 4px;
+    position: relative;
+    display: block;
+    cursor: pointer;
+    color: rgb(77, 77, 77);
+    font-size: 14px;
+    line-height: 18px;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 4px;
+    width: 214px;
+    text-align: left;
+    background-color: rgb(255, 255, 255);
+}
+.card-title {
+    color: rgb(77, 77, 77);
+    clear: both;
+    display: block;
+    font-weight: 400;
+    margin: 0px 0px 4px;
+    overflow: hidden;
+    text-decoration: none;
+    word-wrap: break-word;
+    background-color: transparent;
+}
+.flexContainer{
+	display: flex;
+	flex-direction: row;
+
+
 }
