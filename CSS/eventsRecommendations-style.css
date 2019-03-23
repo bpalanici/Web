@@ -116,7 +116,6 @@ width: 100%;
     padding: 10px;
 }
 .list {
-    margin right: 5px;
     border: 1px rgb(204, 204, 204);
     border-radius: 10px;
     display: inline-block;
@@ -148,7 +147,6 @@ width: 100%;
 .card-list {
     max-height: 445px;
     overflow-y: auto;
-    overflow-x: none;
 }
 .card {
     overflow: auto;
