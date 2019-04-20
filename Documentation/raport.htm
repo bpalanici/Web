@@ -80,7 +80,7 @@
             
             <ul>
                 <li>HTML5 si CSS3 pentru front-end.</li>
-                <li>JavaScript Aici de completat****</li>
+                <li>JavaScript</li>
                 <li>MySQL pentru baza de date deoarece este open-source și des utilizat.</li>
                 <li>PHP 7 ca limbaj de scriptare deoarece:</li>
                 <ul>
@@ -97,12 +97,12 @@
         </section>
         
         <section id="detalii">
-            <h2>5. Detalii de implementare ?? aici trebuie modificat</h2>
+            <h2>5. Detalii de implementare</h2>
             <p>Pentru a implementa proiectul nostru, vom folosi tehnologiile mentionate anterior, iar ca si arhitectura, vom folosi Model View Controller, pentru a separa proiectul si a lucra modular. Vom folosi si arhitectura REST(REpresentational State Transfer) deoarece vom comunica cu GitHub prin intermediul Api-ului.</p>
             <ul>
-                <li>Modelul reprezinta partea de back-end propriu-zisa, care interactioneaza cu baza de date, si </li>
+                <li>Modelul reprezinta datele retinute in baza de date, si restrictiile asupra acestora. Vom folosi MySql pentru a stoca datele. Vor exista datele clientului referitoare la contul sau, dar si statistici preluate de pe GitHub cu ajutorul Api-ului oferit. Prelucrarea datelor se va face cu ajutorul unor Http requests. </li>
                 <li>View-ul reprezinta partea de front-end, partea de interactiune cu utilizatorul. Este reprezentata de pagini html generate dinamic.</li>
-                <li>Controlerul reprezinta legatura dintre front si back-end, acesta trimitand la View pagina html corespunzatoare, si primind de la View request - uri de tip Get si Post.</li>
+                <li>Controllerul reprezinta legatura dintre front-end si baza de date, acesta prelucrand informatiile existente bazate pe cererile provenite de la client. Pentru a le procesa vom avea un server Php, in care posibil vom integra JavaScript sau alte limbaje utile. Acesta se va folosi de tokenul generat la log in pentru a mentine userul conectat si a gestiona cererile.</li>
                 <figure typeof="sa:image">
                     <img src="MVC-Architecture.png" width="100%">
                 </figure>
@@ -116,7 +116,7 @@
                     <li>Utilizatorul este inregistrat</li>
                 </ul>
                 <p>Pe pagina principala i se va afisa utilizatorului statisticile referitoare la fiecare limbaj, dar si evolutia sa(reprezentata prin scor) in ultimul timp. Acesta va putea actualiza statisticile legate de contul sau printr-un buton de update, altfel, acel update se face periodic. (o data pe ora / zi / saptamana / luna)</p>
-                <p>Utilizatorul va putea accesa pagina cu recomandari, si va putea aplica la evenimentele dorite, dar si va avea posibilitatea de a da scor evenimentelor la care a participat. Bazat pe acel scor dar si pe evolutia reala rezultata din statisticile prealuate de pe GitHub, si pe scorul acelui utilizator la limbajul respectiv vor fi afisate noi evenimente relevante utilizatorului.</p>
+                <p>Utilizatorul va putea accesa pagina cu recomandari,  va putea aplica la evenimentele dorite, va putea revedea evenimentele la care a participat in trecut si va putea da un scor la acestea. Bazat pe acel scor dar si pe evolutia reala rezultata din statisticile prealuate de pe GitHub, si pe scorul acelui utilizator la limbajul respectiv vor fi afisate noi evenimente relevante utilizatorului.</p>
                 <p></p>
             </section>
             
