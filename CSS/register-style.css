@@ -1,91 +1,83 @@
-*{
-	margin: 0;
-	padding: 0;
-}
-
 body{
 	background-color: rgb(40,40,40); /* #454545*/
+	width: 100%;
 	height: 100%;
-    margin: 0;
+
+	margin: 0;
     padding: 0;
 }
 
-.line { 
-	position: absolute;
-	top: 10%;
-    height: 1px;
-    background: red;
-    /*background: -webkit-gradient(linear, 0 0, 100% 0, from(#1d4545), 
-    	to(#1d4545), color-stop(50%, white));*/
-}
-
-.logo{
-	position: absolute;
-	top: 5%;
-	left: 3%;
-	width: 200px;
-}
-
-.logo:hover {
-	cursor: pointer;
+.main {
+	display: flex;
+	flex-direction: column;
 }
 
 /* BEGINNING OF CONTAINERS */
 
 .container-header{
+	flex: 30%;
+	border-bottom: 1px solid DimGray;
+}
+
+.content-header {
 	display: flex;
-	flex-flow: row wrap;
+	flex-direction: row;
 	flex-wrap: wrap;
+	justify-content: space-between; 
 
 	font-size: 40px;
 	font-family: Segoe UI;
 	text-align: center;
-
-	height: 10%;
-	width: 70%;
-
-	position: absolute;
-	top: 80px;
-	left: 20%;
 }
 
-.container-header:hover{
+
+.logo{
+	flex: 10%;
+	width: 200px;
+}
+
+.logo:hover {
 	cursor: pointer;
+	opacity: 0.6;
 }
 
 .Tab{
-	flex: 1;
+	flex: 40%;
 	color: whitesmoke;
 	text-decoration: none;
 
-	border-bottom: 1px solid rgb(30,30,30);
-  	background-color: transparent;
+	padding-top: 50px;
 }
 
-.container-Login{
+.Tab:hover{
+	cursor: pointer;
+	opacity: 0.5;
+}
+
+.container-Register{
+	flex: 50%;
+	padding-top: 20px;
+	margin-bottom: 10px;
+}
+
+.content-Register {
 	display: flex;
-	flex-flow: column wrap;
+	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
 
-	padding: 60px;
-	padding-left: 200px;
-	padding-right: 200px;
-	height: 600px;
-}
-
-.label{
-	flex: 1;
 }
 
 .input {
-	flex: 1;
-	flex-grow: 0;
-	width: 300px;
+	width: 100%;
+  	padding: 12px 20px;
+  	margin: 5px 0;
+  	outline: 0;
+  	border-width: 0 0 2px;
+  	border-color:rgb(67,66,93,0.5);
 }
 
 .text {
-	flex: 1;
 	order: 4;
 
 	color: white;
@@ -94,16 +86,12 @@ body{
 }
 
 .link{
-	flex: 1;
-
 	color: cornflowerblue;
 }
 
 .Login-image{
-	flex: 1;
 	align-self: center;
-	height: 200px;
-	width: 200px;
+	width: 15%;
 }
 
 .button {
@@ -111,7 +99,7 @@ body{
   border: none;
   color: white;
   padding: 15px 32px;
-  width: 50px;
+  width: 150px;
   border-radius: 5px;
   text-align: center;
   text-decoration: none;
@@ -121,16 +109,16 @@ body{
   text-decoration: none;
 }
 
-.container-footer{
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	padding: 5px;
-	background-color: #8c8c8c;
-	color: white;
-	text-align: center;
-	font-family: Segoe UI;
+form{
+	flex: 1;
+	height: 30%;
+	width: 30%;
+}
+
+.form-input{
+	display: flex;
+	flex-direction: column;
+	align-items: center;	
 }
 
 /* END OF CONTAINERS */

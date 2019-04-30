@@ -5,37 +5,38 @@
 	<meta charset="utf-8"/>
 	<link rel="icon" href="Images/Logo.png">
 	<link rel="stylesheet" type="text/css" href=CSS/recoverPass-style.css>
-	<title>Login :: Technical Skill Enhancer</title>
+	<title>Recover :: Technical Skill Enhancer</title>
 </head>
 	<body>
-		<div class="line"></div>
-		<a href="index.html">
-			<img class="logo" src="Images/Logo.png" alt="logo-infinity" height="120" width="120">
-		</a>
+		<div class="main">
+			<div class="container-header">
+				<div class="content-header">
+					<a href="index.html"><img class="logo" src="Images/Logo.png"></a>
+					<a href="index.html" class="Tab">Events</a>
+					<a href="index.html" class="Tab">More about us</a>
+				</div>
+			</div>
 
-		<div class="container-header">
-			<a href="index.html" class="Tab">Events</a>
-			<a href="index.html" class="Tab">More about us</a>
-				<!--<a href="index.html" class="Etc">Etc</a>-->
-		</div>
+			
+			
+			<div class="container-Login">
+				<div class="content-Login">
+					<img class="Login-image" src="Images/login-lock.png">
+					<div class="text">Take me to the login <a href="login.html" class="link">page!</a></div>
 
-		
-		
-		<div class="container-Login">
-			<div class="label"></div>
-			<div class="label"></div>
+					<form action="Scripts/welcome.php" method="POST">
+						<div class="form-input">
+							<input class="input" type="text" name="Email" placeholder="jonathan@email.wiz" required=""><br>
+						</div>
+					</form>
 
-			<img class="Login-image" src="Images/login-lock.png" alt="login" height="120" width="120">
-			<div class="text">Already have an account? What are you waiting for, click <a href="login.html" class="link">here!</a></div>
-
-			<input class="input" type="text" name="Email" placeholder="jonathan@email.wiz" required=""><br>
-
-			<a href="index.html"><div class="button">Send acc user and pass</div></a>
-			<div class="label"></div>
+					<a href="index.html"><input type="submit" class="button" value="Send"></a><br><br>
+				</div>
+			</div>
 		</div>
 
 		<div class="container-footer">
-			Show us your GitHub account and based on that, we will help you improve your knowledge and understanding of algorithms, coding tricks. Also, we will sugest events/talks, git repositories for you to learn from, track your progress and test you along the way.
-		</div>
+				Show us your GitHub account and based on that, we will help you improve your knowledge and understanding of algorithms, coding tricks. Also, we will sugest events/talks, git repositories for you to learn from, track your progress and test you along the way.
+			</div>
 	</body>
 </html>

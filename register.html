@@ -1,44 +1,43 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
-	<meta charset="utf-8"/>
 	<link rel="icon" href="Images/Logo.png">
-	<link rel="stylesheet" type="text/css" href=CSS/login-style.css>
-	<title>Login :: Technical Skill Enhancer</title>
+	<link rel="stylesheet" type="text/css" href=CSS/register-style.css>
+	<meta charset="utf-8"/>
+	<title>Register :: Technical Skill Enhancer</title>
 </head>
-	<body>
-		<div class="line"></div>
-		<a href="index.html">
-			<img class="logo" src="Images/Logo.png" alt="logo-infinity" height="120" width="120">
-		</a>
 
+<body>
+	<div class="main">
 		<div class="container-header">
-			<a href="index.html" class="Tab">Events</a>
-			<a href="index.html" class="Tab">More about us</a>
-				<!--<a href="index.html" class="Etc">Etc</a>-->
+			<div class="content-header">
+				<a href="index.html"><img class="logo" src="Images/Logo.png"></a>
+				<a href="index.html" class="Tab">Events</a>
+				<a href="index.html" class="Tab">More about us</a>
+			</div>
 		</div>
 
-		
-		
-		<div class="container-Login">
-			<div class="label"></div>
-			<div class="label"></div>
 
-			<img class="Login-image" src="Images/login-lock.png" alt="login" height="120" width="120">
-			<div class="text">Already have an account? What are you waiting for, click <a href="login.html" class="link">here!</a></div>
+		<div class="container-Register">
+			<div class="content-Register">
+				<img class="Login-image" src="Images/login-lock.png">
+				<div class="text">Already have an account? What are you waiting for, click <a href="login.html" class="link">here!</a></div>
 
-			<input class="input" type="text" name="ID" placeholder="Username" required=""><br>
-			<input class="input" type="text" name="Email" placeholder="jonathan@email.wiz" required=""><br>
-			<input class="input" type="password" name="Password" placeholder="Password" required=""><br>
-			<input class="input" type="password" name="CPassword" placeholder="Confirm password" required=""><br>
-
-			<a href="index.html"><div class="button">Register</div></a>
-			<div class="label"></div>
+				<form action="Scripts/register.php" method="POST">
+					<div class="form-input">
+						<input class="input" type="text" name="ID" placeholder="Username" required="">
+						<input class="input" type="text" name="Email" placeholder="jonathan@email.wiz" required="">
+						<input class="input" type="password" name="Password" placeholder="Password" required="">
+						<input class="input" type="password" name="CPassword" placeholder="Confirm password" required=""><br>
+						<input type="submit" class="button" value="Register">
+					</div>
+				</form>
+			</div>
 		</div>
+</div>
 
-		<div class="container-footer">
-			Show us your GitHub account and based on that, we will help you improve your knowledge and understanding of algorithms, coding tricks. Also, we will sugest events/talks, git repositories for you to learn from, track your progress and test you along the way.
-		</div>
-	</body>
+</body>
+
 </html>
