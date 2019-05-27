@@ -69,20 +69,24 @@ body{
 }
 
 .input {
-	width: 100%;
+	color: white;
+	font-size: 20px;
+	font-family: Segoe UI;
+
+	width: 80%;
   	padding: 12px 20px;
   	margin: 5px 0;
   	outline: 0;
   	border-width: 0 0 2px;
   	border-color:rgb(67,66,93,0.5);
+  	background: transparent;
 }
 
 .text {
-	order: 4;
-
 	color: white;
 	font-size: 20px;
 	font-family: Segoe UI;
+	margin-top: 10px;
 }
 
 .link{
@@ -101,12 +105,9 @@ body{
   padding: 15px 32px;
   width: 150px;
   border-radius: 5px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
   font-size: 16px;
   font-family: Segoe UI;
-  text-decoration: none;
+  cursor: pointer;
 }
 
 form{
@@ -132,6 +133,22 @@ form{
 	color: white;
 	text-align: center;
 	font-family: Segoe UI;
+}
+
+.button-Google {
+	/*exactly the width and height of the image*/
+	background-color: #4CAF50; /* Green */
+	width: 150px;
+	height: 50px;
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+}
+
+.login-btns{
+	display: flex;
+	justify-content: space-between;
+	width: 350px;
 }
 
 /* END OF CONTAINERS */

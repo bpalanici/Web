@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 <head>
 	<link rel="icon" href="Images/Logo.png">
 	<link rel="stylesheet" type="text/css" href=CSS/login-style.css>
@@ -23,17 +23,22 @@
 		<div class="container-Login">
 			<div class="content-Login">
 				<img class="Login-image" src="Images/login-lock.png">
-				<div class="text">Don't have an account? Register <a href="register.html" class="link">here!</a>
-					</div>
-				<div class="text">Forgot password? Click <a href="recoverPass.html" class="link">here!</a></div>
-				<form action="Scripts/welcome.php" method="POST">
+
+				<form action="Scripts/login.php" method="POST">
 					<div class="form-input">
-						<input class="input" type="text" name="ID" placeholder="Username" required="">
-						<input class="input" type="password" name="Password" placeholder="Password" required=""><br>
+						<input class="input" type="text" name="ID" placeholder="Username" autocomplete="off">
+						<input class="input" type="password" name="Password" placeholder="Password"><br>
+
+						<div class="login-btns">
+							<input type="submit" class="button" value="Login">
+							<input type="image" src="Images/Gmail.png" alt="submit" class="button-Google" value="" >
+						</div>
 					</div>
 				</form>
 
-				<a href="profile.html"><input type="submit" class="button" value="Login"></a><br><br>
+				<div class="text">Don't have an account? Register <a href="register.html" class="link">here!</a>
+					</div>
+				<div class="text">Forgot password? Click <a href="recoverPass.html" class="link">here!</a></div>
 			</div>
 		</div>
 	</div>
