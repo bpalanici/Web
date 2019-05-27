@@ -69,12 +69,17 @@ body{
 }
 
 .input {
-	width: 100%;
+	color: white;
+	font-size: 20px;
+	font-family: Segoe UI;
+
+	width: 80%;
   	padding: 12px 20px;
   	margin: 5px 0;
   	outline: 0;
   	border-width: 0 0 2px;
   	border-color:rgb(67,66,93,0.5);
+  	background: transparent;
 }
 
 .text {
