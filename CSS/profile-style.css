@@ -1,192 +1,98 @@
-body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+html{
+    background-image: url("../Images/background.jpg");
+    background-attachment: fixed;
+    background-size: 100% 100%;
 }
 
-html {
-	background-image: url("../Images/background.jpg");
-	background-attachment: fixed;
-	background-size: 100% 100%;
-	color: white;
-}
-header {
-	background-color: rgb(0, 118, 168);
-	height: 150px;
-	width: 100%;
-}
 body{
-	margin: 0px;
-}
-.imgHeader {
-	margin-top: 20px;
-	margin-left: 20px;
-}
-.headerTitle {
-	padding: 10px;
-	font-size: 40px;
-	margin-top: 20px;
-	margin-left: 50px;
-}
-.imageTitle {
-	display: flex;
-	font-family: Castellar, "Times New Roman";
-	font-size: 26px;
-	float: left;
+    margin: 0;
 }
 
-nav {
-float: right;
-}
-
-nav ul {
-margin-top: 90px;
-margin-right: 70px;
-
-}
-nav ul li {
-display: inline-block;
-margin-left: 40px;
-font-size: 20px;
-position: relative;
-}
-
-a{
-	text-decoration: none;
-	color: white;
-	text-transform: uppercase;
-}
-nav a:hover {
-
-	color: #000;
-}
-nav a::after{
-	content: '';
-	display: block;
-	height: 5px;
-	background-color: lightblue;
-	width: 0%;
-	top: 0;
-	transition: all ease-in-out 250ms;
-}
-
-nav a:hover::after{
-width: 100%;
-}
-
-.flexContainer{
+.main{
     display: flex;
-    min-width: 100px;
     flex-direction: column;
 }
 
-.list {
-    text-align: left;
-    padding: 10px;
-    margin: 5px;
-    border: 10px rgb(204, 204, 204);
-    border-radius: 10px;
-    display: inline-block;
-    max-height: 450px;
-    background-color: rgb(255, 255, 0, 0.66); 
+.container-header{
+    flex: 30%;
 }
-.list-header {
-    padding: 8px 4px;
-    position: relative;
-    min-height: 19px;
-    display: block;
-    line-height: 18px;
-    text-align: left;
+
+.content-header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: rgb(40,40,40);
+    padding-bottom: 17px;
 }
-.list-title {
-    cursor: pointer;
-    display: inline;
-    font-size: 25px;
-    font-weight: bold;
-    line-height: 18px;
-    margin: 0px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    word-wrap: break-word;
-    color: rgb(0, 0, 0);
-}
-.card-list {
-	max-height: 450px;
-    overflow-y: auto;
-    overflow-x: auto;
-}
-.card {
-    overflow: auto;
-    padding: 6px 8px 4px;
-    margin-bottom: 4px;
-    position: relative;
-    display: block;
-    cursor: pointer;
-    color: rgb(77, 77, 77);
-    font-size: 14px;
-    line-height: 18px;
-    border: 1px solid rgb(204, 204, 204);
-    border-radius: 4px;
-    width: 214px;
-    text-align: left;
-    background-color: rgb(255, 255, 255);
-}
-.card-title {
-    color: rgb(77, 77, 77);
-    clear: both;
-    display: block;
-    font-weight: 400;
-    margin: 0px 0px 4px;
-    overflow: hidden;
+
+.Tab{
+    flex: auto;
+    text-align: center;
+    margin-top: 20px;
     text-decoration: none;
-    word-wrap: break-word;
-    background-color: transparent;
+    font-family: Segoe UI;
+    font-size: 50px;
+    color: ghostwhite;
 }
 
-@media only screen and (max-width: 1440px)  {
-    
-nav ul {
-    margin-top: 30px;
-    margin-right: 70px;
-
+.Tab:hover{
+    opacity: 0.5;
 }
 
+.main-frame{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.item{
+    min-width: 340px;
+    background-color: #221E1E;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    height: 244px;
+    border-radius: 10px;
+    color: white;
+    font-family: Segoe UI;
+}
+
+.item-list{
+    background-color: ghostwhite;
+    color: black;
+    border-radius: 10px;
+    margin: 5px;
+    margin-top: 10px;
+}
+
+.item-language{
+    text-align: center;
+    font-size: 40px;
+    color: #CEBA70;
+    cursor: pointer;
+}
+
+.info{
+    margin: 5px;
+}
+
+.logo:hover{
+    opacity: 0.6;
+}
+
+hr{
+    background-color: #CEBA70;
+    margin: 0px 5px 0px 5px;
+}
+
+@media only screen and (max-width: 800px) {
+    .item{
+        width: 100%;
+    }
+
+    .content-header{
+        flex-direction: column;
+    }
 }
