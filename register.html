@@ -14,7 +14,7 @@
 		<div class="container-header">
 			<div class="content-header">
 				<a href="index.html"><img class="logo" src="Images/Logo.png"></a>
-				<a href="index.html" class="Tab">Events</a>
+				<!--<a href="index.html" class="Tab">Events</a>-->
 				<a href="index.html" class="Tab">More about us</a>
 			</div>
 		</div>
@@ -23,14 +23,20 @@
 		<div class="container-Register">
 			<div class="content-Register">
 				<img class="Login-image" src="Images/login-lock.png">
-				<div class="text">Already have an account? What are you waiting for, click <a href="login.html" class="link">here!</a></div>
+				<!-- <div class="text">Already have an account? What are you waiting for, click <a href="login.html" class="link">here!</a></div> -->
 
-				<form action="Scripts/register.php" method="POST">
+				<form action="Controller/register.php" method="POST">
 					<div class="form-input">
-						<input class="input" type="text" name="ID" placeholder="Username" required="" autocomplete="off">
-						<input class="input" type="text" name="Email" placeholder="jonathan@email.wiz" required="" autocomplete="off">
-						<input class="input" type="password" name="Password" placeholder="Password" required="">
-						<input class="input" type="password" name="CPassword" placeholder="Confirm password" required=""><br>
+						<input class="input" type="text" name="ID" placeholder="Username" required="" autocomplete="off"></br>
+						<select name="select[]" multiple>
+						  <option name = "c++" value="c++">C++</option>
+						  <option name = "java" value="java">Java</option>
+						  <option name = "c#" value="c#">C#</option>
+						  <option name = "kotlin" value="kotlin">kotlin</option>
+						  <option name = "php" value="php">Php</option>
+						  <option name = "javascript" value="javascript">JavaScript</option>
+						</select> 
+						</br>
 						<input type="submit" class="button" value="Register">
 					</div>
 				</form>
