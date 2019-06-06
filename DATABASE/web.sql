@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 05, 2019 at 02:52 PM
+-- Generation Time: Jun 06, 2019 at 08:48 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -25,6 +25,26 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `userlanguages`
+--
+
+CREATE TABLE `userlanguages` (
+  `id` int(11) NOT NULL,
+  `username` varchar(30) NOT NULL,
+  `languagename` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `userlanguages`
+--
+
+INSERT INTO `userlanguages` (`id`, `username`, `languagename`) VALUES
+(1, 'a', 'c++'),
+(2, 'a', 'java');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -35,8 +55,21 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `mail`) VALUES
+(2, 'a', 'bpalanici1337@gmail.com');
+
+--
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `userlanguages`
+--
+ALTER TABLE `userlanguages`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `users`
@@ -49,10 +82,16 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `userlanguages`
+--
+ALTER TABLE `userlanguages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

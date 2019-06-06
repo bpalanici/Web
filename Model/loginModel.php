@@ -1,25 +1,25 @@
 <?php 
 
-function IsRegistered($client_username) {	
-	$user = 'root';
-	$pass = '';
-	$db = 'web';
-	$conn = new mysqli('localhost', $user, $pass, $db) or die("Unable to conn");
+	require_once('databaseConn.php');
 
-	if ($stmt = $conn->prepare('SELECT count(*) FROM users where mail = ?')) {
-	    $stmt->bind_param("s", $client_username);
-	    $stmt->execute();
-	    $stmt->bind_result($rez);
-	    $stmt->fetch();
+	function IsRegistered($client_username) {	
+		$user = 'root';
+		$pass = '';
+		$db = 'web';
+		$conn = db::getConnection();
 
-		$stmt->close();
-		$conn->close();
-		return $rez; 
+		if ($stmt = $conn->prepare('SELECT count(*) FROM users where mail = ?')) {
+		    $stmt->bind_param("s", $client_username);
+		    $stmt->execute();
+		    $stmt->bind_result($rez);
+		    $stmt->fetch();
+
+			$stmt->close();
+			return $rez; 
+		}
+		return 0;
 	}
-	mysqli_close($conn);
-	return 0;
-}
 
-//echo IsRegistered('a@a');
+	//echo IsRegistered('a@dasda');
 
 ?>
