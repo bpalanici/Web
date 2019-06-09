@@ -1,6 +1,7 @@
 <?php 
 
 	require_once('databaseConn.php');
+	session_start();
 
 	function IsRegistered($client_username) {	
 		$user = 'root';
