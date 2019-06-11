@@ -47,16 +47,31 @@ body{
     padding: 20px;
 }
 
-.item{
-    min-width: 340px;
-    background-color: #221E1E;
+.profile-pic{
+    width: 20%;
+    margin-left: 20px;
     margin-right: 20px;
+    height: 400px;
+}
+
+.items{
+    flex: 40%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.item{
+    width: 30%;
+    background-color: #221E1E;
+    margin-right: 35px;
     margin-bottom: 20px;
     font-size: 30px;
-    height: 244px;
     border-radius: 10px;
     color: white;
     font-family: Segoe UI;
+
 }
 
 .item-list{
@@ -72,10 +87,15 @@ body{
     font-size: 40px;
     color: #CEBA70;
     cursor: pointer;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .info{
     margin: 5px;
+    word-wrap: break-word;
 }
 
 .logo:hover{

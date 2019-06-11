@@ -17,6 +17,7 @@
         <a href="index.html" class="Tab">
           Hello there, user 
           <?php
+            require_once("Controller/profile.php");
             echo $_SESSION['userGmail'];
           ?> 
         </a>
@@ -26,71 +27,14 @@
     </div>
 
     <div class="main-frame">
-      <div class="item">
-          <div class="item-language">
-            C++
-          <hr>
-          </div>
+      <div class="profile-pic" id="profile-pic">
 
-          <div class="item-list">
-              <div class="info">Issues solved : 15</div>
-              <div class="info">Issues created : 10</div>
-              <div class="info">Issues received : 20</div>
-              <div class="info">Rank  : advanced </div>
-          </div>
       </div>
 
-      <div class="item">
-        <div class="item-language">
-             Python
-        </div>
-        <hr>
-        <div class="item-list">
-            <div class="info">Issues solved : 15</div>
-            <div class="info">Issues created : 10</div>
-            <div class="info">Issues received : 20</div>
-            <div class="info">Rank  : advanced</div>
-        </div>
+      <div class="items">
+        <?php echo getData() ?>
       </div>
-
-      <div class="item">
-        <div class="item-language">
-             Assembly x86
-        </div>
-        <hr>
-        <div class="item-list">
-            <div class="info">Issues solved : 15</div>
-            <div class="info">Issues created : 10</div>
-            <div class="info">Issues received : 20</div>
-            <div class="info">Rank  : advanced</div>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="item-language">
-             AutoIT
-        </div>
-        <hr>
-        <div class="item-list">
-            <div class="info">Issues solved : 15</div>
-            <div class="info">Issues created : 10</div>
-            <div class="info">Issues received : 20</div>
-            <div class="info">Rank  : advanced</div>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="item-language">
-             Ruby
-        </div>
-        <hr>
-        <div class="item-list">
-            <div class="info">Issues solved : 15</div>
-            <div class="info">Issues created : 10</div>
-            <div class="info">Issues received : 20</div>
-            <div class="info">Rank  : advanced</div>
-        </div>
-      </div>
+        
     </div>
   </div>
 
