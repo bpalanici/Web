@@ -19,9 +19,8 @@
           <?php
             echo $_SESSION['userGmail'];
           ?> 
-          .
         </a>
-        <a href="index.html" class="Tab">Placeholdeeeeer2</a>
+        <a href="eventsRecommendations.php" class="Tab">Events</a>
         <a href="login.html" class="Tab">Logout</a>
       </div>
     </div>
