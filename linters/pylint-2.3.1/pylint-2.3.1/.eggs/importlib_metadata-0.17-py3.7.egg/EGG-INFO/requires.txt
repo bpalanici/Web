@@ -1,0 +1,6 @@
+zipp>=0.5
+
+[docs]
+docutils==0.12
+rst.linker
+sphinx
