@@ -4,6 +4,7 @@
 	session_start();
 
 	$username = strip_tags($_POST['ID']);
+	$cfusername = strip_tags($_POST['cfusername']); 
 
 	$options = $_POST['select'];
 
@@ -34,7 +35,7 @@
 		exit(0);
 	}
 
-	$registerMsg = register($username, $options);
+	$registerMsg = register($username, $cfusername, $options);
 
 	if ($registerMsg != 'ok') {
 		$reutrnMsg = "Error : " . $registerMsg;

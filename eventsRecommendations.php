@@ -1,6 +1,6 @@
 <?php
   require_once('Controller/events.php');
-
+  session_start();
 ?>
 
 <!DOCTYPE html>
@@ -22,8 +22,8 @@
   	<nav>
   		<ul>
   			<li>
-  				<a href="profile.html">
-  			    Details about profile
+  				<a href="Controller/updateCfStatistics.php">
+  			    Update Cf Statistics
   				</a>
   			</li>
   			<li>

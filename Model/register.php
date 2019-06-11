@@ -3,8 +3,10 @@
 	require_once('databaseConn.php');
 	session_start();
 
-	function register($username, $languages) {
+	function register($username, $cfusername, $languages) {
 		$conn = db::getConnection();
+		if (checkIfCfAccExists($cfusername) != 'ok')
+			return 'CodeForces Account with this username does not exists';
 		if ($stmt = $conn->prepare('SELECT count(*) FROM users where username = ?')) {
 		    $stmt->bind_param("s", $username);
 		    $stmt->execute();
@@ -16,8 +18,8 @@
 		}
 		else return 'Some db Error, try again';
 
-		if ($stmt = $conn->prepare('INSERT INTO users (username, mail) Values (?, ?)')) {
-		    $stmt->bind_param("ss", $username, $_SESSION['userGmail']);
+		if ($stmt = $conn->prepare('INSERT INTO users (username, mail, cfusername) Values (?, ?, ?)')) {
+		    $stmt->bind_param("sss", $username, $_SESSION['userGmail'], $cfusername);
 		    $stmt->execute();
 			$stmt->close();
 		}
@@ -31,8 +33,27 @@
 			$stmt->close();
 		}
 		else return 'Some db Error, try again 3';
-
+		$_SESSION['cfusername'] = $cfusername;
 		return 'ok';
 	}
+
+	function checkIfCfAccExists($cfusername) {
+		$result = '';
+
+		$c = curl_init();
+		curl_setopt($c, CURLOPT_URL,'https://codeforces.com/api/user.status?handle=' . $cfusername);              // stabilim URL-ul serviciului
+		curl_setopt($c, CURLOPT_RETURNTRANSFER, true);  // rezultatul cererii va fi disponibil ca șir de caractere
+		curl_setopt($c, CURLOPT_SSL_VERIFYPEER, false); // nu verificam certificatul digital
+		$res = curl_exec($c);                           // executam cererea GET
+		curl_close($c);
+
+		$data = json_decode($res, true);
+
+		if ($data['status'] == 'OK')
+			return 'ok';
+		return 'not ok';
+	}
+
+
 
 ?>
