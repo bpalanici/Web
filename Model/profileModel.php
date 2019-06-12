@@ -15,7 +15,7 @@
 
   // IN  : -
   // OUT : JSON cu repositourile user-ului.
-  function getRepos(){
+  function getRepos() {
     $curl = getCURL();
     curl_setopt($curl, CURLOPT_URL, 'https://api.github.com/users/' . $_SESSION['username'] . '/repos');
     
@@ -37,7 +37,7 @@
     
     if(!($resp = curl_exec($curl))){
       return NULL;
-    }else{
+    } else {
       $result = json_decode($resp, true);
       if(isset($result['parent'])){
         $nextURL = $result['parent']['languages_url'];

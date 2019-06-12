@@ -1,0 +1,3 @@
+$_SESSION['username'] = username, git name etc
+$_SESSION['cfusername'] = cf username
+$_SESSION['userGmail'] = user gmail

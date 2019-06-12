@@ -27,13 +27,13 @@
 		foreach ($data['result'] as $key => $value) {
 		  	if ($value['phase'] == 'BEFORE') {
 		  		$result .= '<div class="card"><div class=flexInsideCard>
-                <a class="card-title">';
+                <form action="Controller/applytoevent.php" method="get"><a class="card-title">';
 			  	foreach ($value as $key2 => $value2) {
 			  		if ($key2 == 'name') 
-			  			$result .= $value2 . ' ';
+			  			$result .= '<input type="hidden" name="name" value="' . $value2 . '"> ' . $value2;
 			  		else if ($key2 == 'startTimeSeconds') {
 			  			//echo $key2 . ' => ' . date('Y/m/d H:i:s', $value2). '</br>';
-			  			$result .= '</br> Starts at : ' . date('Y/m/d H:i:s', $value2);
+			  			$result .= '</br> Starts at : <input type="hidden" name="date" value="' . date('Y/m/d H:i:s', $value2) . '">' . date('Y/m/d H:i:s', $value2);
 			  		}
 			  		else if ($key2 == 'durationSeconds') {
 			  			;
@@ -46,12 +46,12 @@
 			  		else ;
 					//echo $key2 . ' => ' . $value2. '</br>';
 			  	}
-			  	$result = $result . ' </br>Difficulty : Easy</a>
-                	<button class="buttonCard"> Apply </button>
+			  	$result = $result . ' </br>Difficulty : Easy <input type="hidden" name="diff" value="easy"> <input type="hidden" name="group" value="codeforces"></br></a><input type="submit" class="buttonCard" value="Apply">
+	          	</form>
               	</div></div>';
 			}
 		}	
-		
+
 		return $result ;
 	}
 
@@ -96,44 +96,44 @@
 		$i = 0;
 		$offset = 0;
 		while ($i < count($date)) {
-		  //echo $date[$i] . '</br>';
 		  $i1 = 0;
 		  while ($i1 < $eventsThatDate[$i])  {
 		     $result .= '<div class="card"><div class=flexInsideCard>
-	                <a class="card-title">' . $date[$i] . '</br> Group : ' . $group[$i + $i1 + $offset] . '</br></br>'. $name[$i + $i1 + $offset] . '</br></br>Difficulty : Hard</a>
-	            	<button class="buttonCard"> Apply </button>
-	          	</div></div>';
+	                <form action="Controller/applytoevent.php" method="get"><a class="card-title"><input type="hidden" name="date" value="' . $date[$i] . '">' . $date[$i] . '</br> Group : <input type="hidden" name="group" value="' . $group[$i + $i1 + $offset] . '">' . $group[$i + $i1 + $offset] . '<input type="hidden" name="name" value="' . $name[$i + $i1 + $offset] . '">' . $name[$i + $i1 + $offset]. '</br></br>Difficulty : Hard</a>
+	                <input type="hidden" name="diff" value="Hard">
+	            	<input type="submit" class="buttonCard" value="Apply">
+	          	</form></div></div>';
+/*
+
+			  			$result .= '<input type="hidden" name="name" value="' . $value2 . '"> ' . $value2;
+			  		else if ($key2 == 'startTimeSeconds') {
+			  			//echo $key2 . ' => ' . date('Y/m/d H:i:s', $value2). '</br>';
+			  			$result .= '</br> Starts at : <input type="hidden" name="date" value="' . date('Y/m/d H:i:s', $value2) . '">' . date('Y/m/d H:i:s', $value2);
+			  		}
+			  		else if ($key2 == 'durationSeconds') {
+			  			;
+			  			//echo $key2 . ' => ' . convert_seconds($value2). '</br>';
+			  		} 
+			  		else if ($key2 == 'relativeTimeSeconds') {
+			  			;
+			  			//echo $key2 . ' => ' . convert_seconds(-$value2). '</br>';
+			  		} 
+			  		else ;
+					//echo $key2 . ' => ' . $value2. '</br>';
+			  	}
+			  	$result = $result . ' </br>Difficulty : Easy <input type="hidden" name="diff" value="easy"> <input type="hidden" name="group" value="codeforces"></br></a><input type="submit" class="buttonCard" value="Apply">
+	          	</form>
+              	</div></div>';
+			}
+---------------------------------------------------------------------------*/
+
+
 		     $i1++;
 		     $offset++;
 		  }
 		  $offset--;
 		  $i++;
 		}
-/*
-		while ($i < count($date)) {
-		  $result .= '<div class="card"><div class=flexInsideCard>
-	                <a class="card-title">' . $date[$i] . ' ' . $group[$i] . ' '. $name[$i] . ' </br>Difficulty : Hard</a>
-	            	<button class="buttonCard"> Apply </button>
-	          	</div></div>';
-		  $i++;
-		}*/
-/*
-		foreach ($xpath->query('//div[contains(@class, \'unit size5of7 \')]/ul/li') as $key => $value) {
-			if ($i == 1)
-				$result .= '<div class="card"><div class=flexInsideCard>
-	                <a class="card-title">';
-
-			$result .= $value->nodeValue . '</br>';
-			$i++;
-			if ($i == 3) {
-				$result = $result . ' </br>Difficulty : Hard</a>
-	            	<button class="buttonCard"> Apply </button>
-	          	</div></div>';
-	          	$i = 1;
-	        }
-			
-		}*/	
-
 		return $result ;
 	}
 
