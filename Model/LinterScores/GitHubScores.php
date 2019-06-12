@@ -2,7 +2,7 @@
    require_once('..\databaseConn.php');
     session_start();
     $GLOBALS['conn'] = db::getConnection();
-    $_SESSION['username'] = "andreiarusoaie";
+    //$_SESSION['username'] = "andreiarusoaie";
     ini_set('max_execution_time', 300);
 
     function findIteration()
