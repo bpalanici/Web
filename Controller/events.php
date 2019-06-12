@@ -3,12 +3,15 @@
 	require_once('Model/modelEvents.php');
 	require_once('Model/profileModel.php');
 
-	function controllerGetRecommendations() {
+	function controllerGetRecommendationsCf() {
 		addRecommendationsCf();
-		addRecommendationsMeetup();
-		return getAllRecommendations();
+		return getAllRecommendationsCf();
 	}
 
+	function controllerGetRecommendationsMeetup() {
+		addRecommendationsMeetup();
+		return getAllRecommendationsMeetup();
+	}
 
 	function controllerGetRepos(){
 		return printRepos();

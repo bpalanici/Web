@@ -188,11 +188,37 @@
 		return $result ;
 	}
 
-	function getAllRecommendations() {
+	function getAllRecommendationsMeetup() {
 		$result = '';
 		$conn = db::getConnection();
 		if ($stmt = $conn->prepare('SELECT eventname, eventgroup, eventdiff, eventdate FROM eventsall
-			where (eventname, eventgroup, eventdate) not in (
+			where eventgroup <> \'codeforces\' and (eventname, eventgroup, eventdate) not in (
+			    select eventname, eventgroup, eventdate from events
+			    where usergmail = ?)' )) {
+			
+			$stmt->bind_param("s", $_SESSION['userGmail']);
+		    $stmt->execute();
+		    $stmt->bind_result($evname, $evgroup, $eddiff, $evdate);
+		    while ($stmt->fetch()) {
+		    	$result .= '<div class="card"><div class=flexInsideCard>
+	                <form action="Controller/applytoevent.php" method="get"><a class="card-title"><input type="hidden" name="date" value="' . $evdate . '">' . $evdate . '</br> Group : <input type="hidden" name="group" value="' . $evgroup . '">' . $evgroup . '<input type="hidden" name="name" value="' . $evname . '">' . $evname. '</br></br>Difficulty : ' . $eddiff . '</a>
+	                <input type="hidden" name="diff" value="' . $eddiff . '">
+	            	<input type="submit" class="buttonCard" value="Apply">
+	          	</form></div></div>';
+		    }
+			$stmt->close();
+			if ($rez == 1)
+				return 'User already exists, chose another username'; 
+		}
+		else return 'Some db Error, try again';
+		return $result;
+	}
+
+	function getAllRecommendationsCf() {
+		$result = '';
+		$conn = db::getConnection();
+		if ($stmt = $conn->prepare('SELECT eventname, eventgroup, eventdiff, eventdate FROM eventsall
+			where eventgroup = \'codeforces\' and (eventname, eventgroup, eventdate) not in (
 			    select eventname, eventgroup, eventdate from events
 			    where usergmail = ?)' )) {
 			

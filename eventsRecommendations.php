@@ -45,6 +45,9 @@
                       <button class="buttonCard"> Apply </button>
                     </div>
                 </div>
+                <?php 
+                    echo controllerGetRecommendationsCf();
+                ?>
 
             </div>
         </div>
@@ -70,7 +73,7 @@
                     </div>
                 </div>
                 <?php 
-                    echo controllerGetRecommendations();
+                    echo controllerGetRecommendationsMeetup();
                 ?>
             </div>
         </div>
