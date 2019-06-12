@@ -1,0 +1,2 @@
+<?xml version="1.0"?>
+<root><k0><CfUsername>tourist</CfUsername><NrAccepted>1357</NrAccepted><NrSolved>1133</NrSolved><date>2019-06-12</date><NrSubmissions>2015</NrSubmissions></k0></root>
