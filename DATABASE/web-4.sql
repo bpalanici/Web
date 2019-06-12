@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2019 at 10:50 PM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.3
+-- Generation Time: Jun 12, 2019 at 10:33 PM
+-- Server version: 10.1.39-MariaDB
+-- PHP Version: 7.3.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -133,10 +133,36 @@ CREATE TABLE `scores` (
   `id` int(15) NOT NULL,
   `iteration` int(15) NOT NULL,
   `username` varchar(255) NOT NULL,
+  `rawlink` varchar(255) NOT NULL,
   `filename` varchar(255) NOT NULL,
   `language` varchar(255) NOT NULL,
   `score` double(15,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `scores`
+--
+
+INSERT INTO `scores` (`id`, `iteration`, `username`, `rawlink`, `filename`, `language`, `score`) VALUES
+(1, 1, 'andreiarusoaie', 'https://raw.githubusercontent.com/andreiarusoaie/itc-testing-tools/master/benchmark.py', 'benchmark.py', 'python', 4.23),
+(2, 1, 'andreiarusoaie', 'https://raw.githubusercontent.com/andreiarusoaie/itc-testing-tools/master/python/clanalyze.py', 'clanalyze.py', 'python', 1.33),
+(3, 1, 'andreiarusoaie', 'https://raw.githubusercontent.com/andreiarusoaie/itc-testing-tools/master/python/clang%2B%2B.py', 'clang++.py', 'python', 2.95),
+(4, 1, 'andreiarusoaie', 'https://raw.githubusercontent.com/andreiarusoaie/itc-testing-tools/master/python/clang.py', 'clang.py', 'python', 2.95),
+(5, 1, 'andreiarusoaie', 'https://raw.githubusercontent.com/andreiarusoaie/itc-testing-tools/master/python/cppcheck.py', 'cppcheck.py', 'python', 2.61),
+(6, 1, 'andreiarusoaie', 'https://raw.githubusercontent.com/andreiarusoaie/itc-testing-tools/master/python/cpplint.py', 'cpplint.py', 'python', 2.67),
+(7, 1, 'andreiarusoaie', 'https://raw.githubusercontent.com/andreiarusoaie/itc-testing-tools/master/python/dirutils.py', 'dirutils.py', 'python', 6.06),
+(8, 1, 'andreiarusoaie', 'https://raw.githubusercontent.com/andreiarusoaie/itc-testing-tools/master/python/flawfinder.py', 'flawfinder.py', 'python', 4.48),
+(9, 1, 'andreiarusoaie', 'https://raw.githubusercontent.com/andreiarusoaie/itc-testing-tools/master/python/flint%2B%2B.py', 'flint++.py', 'python', 2.95),
+(10, 1, 'andreiarusoaie', 'https://raw.githubusercontent.com/andreiarusoaie/itc-testing-tools/master/python/framac.py', 'framac.py', 'python', 4.03),
+(11, 1, 'andreiarusoaie', 'https://raw.githubusercontent.com/andreiarusoaie/itc-testing-tools/master/python/infer.py', 'infer.py', 'python', 3.72),
+(12, 1, 'andreiarusoaie', 'https://raw.githubusercontent.com/andreiarusoaie/itc-testing-tools/master/python/latex.py', 'latex.py', 'python', 5.23),
+(13, 1, 'andreiarusoaie', 'https://raw.githubusercontent.com/andreiarusoaie/itc-testing-tools/master/python/oclint.py', 'oclint.py', 'python', 3.27),
+(14, 1, 'andreiarusoaie', 'https://raw.githubusercontent.com/andreiarusoaie/itc-testing-tools/master/python/sparse.py', 'sparse.py', 'python', 2.32),
+(15, 1, 'andreiarusoaie', 'https://raw.githubusercontent.com/andreiarusoaie/itc-testing-tools/master/python/splint.py', 'splint.py', 'python', 3.06),
+(16, 1, 'andreiarusoaie', 'https://raw.githubusercontent.com/andreiarusoaie/itc-testing-tools/master/python/statistics.py', 'statistics.py', 'python', 2.63),
+(17, 1, 'andreiarusoaie', 'https://raw.githubusercontent.com/andreiarusoaie/itc-testing-tools/master/python/system.py', 'system.py', 'python', 6.00),
+(18, 1, 'andreiarusoaie', 'https://raw.githubusercontent.com/andreiarusoaie/itc-testing-tools/master/python/uno-parser.py', 'uno-parser.py', 'python', 7.27),
+(19, 1, 'andreiarusoaie', 'https://raw.githubusercontent.com/andreiarusoaie/itc-testing-tools/master/python/uno.py', 'uno.py', 'python', 2.77);
 
 -- --------------------------------------------------------
 
@@ -274,7 +300,7 @@ ALTER TABLE `eventsall`
 -- AUTO_INCREMENT for table `scores`
 --
 ALTER TABLE `scores`
-  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `userlanguages`
