@@ -5,7 +5,6 @@
     <link rel="stylesheet" type="text/css" href="CSS/profile-style.css">
     <title>Profile | Technical Skill Enhancer</title>
     <?php
-      require_once('../Controller/updateCfStatistics.php');
       session_start();
     ?>
   </head>

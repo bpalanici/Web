@@ -1,0 +1,133 @@
+body{
+	background-color: rgb(40,40,40); /* #454545*/
+	width: 100%;
+	height: 100%;
+
+	margin: 0;
+    padding: 0;
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+}
+
+/* BEGINNING OF CONTAINERS */
+
+.container-header{
+	flex: 30%;
+	border-bottom: 1px solid DimGray;
+}
+
+.content-header {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between; 
+
+	font-size: 40px;
+	font-family: Segoe UI;
+	text-align: center;
+}
+
+
+.logo{
+	flex: 10%;
+	width: 200px;
+}
+
+.logo:hover {
+	cursor: pointer;
+	opacity: 0.6;
+}
+
+.Tab{
+	flex: 40%;
+	color: whitesmoke;
+	text-decoration: none;
+
+	padding-top: 50px;
+}
+
+.Tab:hover{
+	cursor: pointer;
+	opacity: 0.5;
+}
+
+.container-Register{
+	flex: 50%;
+	padding-top: 20px;
+	margin-bottom: 10px;
+}
+
+.content-Register {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+
+}
+
+.input {
+	color: white;
+	font-size: 20px;
+	font-family: Segoe UI;
+
+	width: 70%;
+  	padding: 5px 10px;
+  	margin: 5px 0;
+  	outline: 0;
+  	border-width: 0 0 2px;
+  	border-color:rgb(67,66,93,0.5);
+  	background: transparent;
+}
+
+.text {
+	order: 4;
+
+	color: white;
+	font-size: 20px;
+	font-family: Segoe UI;
+}
+
+.link{
+	color: cornflowerblue;
+}
+
+.Login-image{
+	align-self: center;
+	width: 15%;
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  width: 150px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: Segoe UI;
+  text-decoration: none;
+}
+
+form{
+	flex: 1;
+	height: 30%;
+	width: 30%;
+}
+
+.form-input{
+	display: flex;
+	flex-direction: column;
+	align-items: center;	
+}
+
+/* END OF CONTAINERS */
+
+.text{
+	margin-top: 25px;
+}
