@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 06, 2019 at 08:48 PM
+-- Generation Time: Jun 12, 2019 at 01:40 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -25,6 +25,29 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `cfstatistics`
+--
+
+CREATE TABLE `cfstatistics` (
+  `id` int(11) NOT NULL,
+  `usergmail` varchar(50) NOT NULL,
+  `cfusername` varchar(50) NOT NULL,
+  `nrAccepted` int(11) NOT NULL,
+  `nrSolved` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `nrSubmissions` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `cfstatistics`
+--
+
+INSERT INTO `cfstatistics` (`id`, `usergmail`, `cfusername`, `nrAccepted`, `nrSolved`, `date`, `nrSubmissions`) VALUES
+(11, 'bpalanici1337@gmail.com', 'TOURIST', 1357, 1133, '2019-06-12', 2015);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `userlanguages`
 --
 
@@ -39,8 +62,8 @@ CREATE TABLE `userlanguages` (
 --
 
 INSERT INTO `userlanguages` (`id`, `username`, `languagename`) VALUES
-(1, 'a', 'c++'),
-(2, 'a', 'java');
+(11, 'a', 'java'),
+(12, 'a', 'java');
 
 -- --------------------------------------------------------
 
@@ -51,19 +74,26 @@ INSERT INTO `userlanguages` (`id`, `username`, `languagename`) VALUES
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(20) NOT NULL,
-  `mail` varchar(30) NOT NULL
+  `mail` varchar(30) NOT NULL,
+  `cfusername` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `mail`) VALUES
-(2, 'a', 'bpalanici1337@gmail.com');
+INSERT INTO `users` (`id`, `username`, `mail`, `cfusername`) VALUES
+(5, 'a', 'bpalanici1337@gmail.com', 'TOURIST');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `cfstatistics`
+--
+ALTER TABLE `cfstatistics`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `userlanguages`
@@ -82,16 +112,22 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `cfstatistics`
+--
+ALTER TABLE `cfstatistics`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
 -- AUTO_INCREMENT for table `userlanguages`
 --
 ALTER TABLE `userlanguages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
