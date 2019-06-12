@@ -32,7 +32,7 @@
       </div>
 
       <div class="items">
-        <?php //echo getData() ?>
+        <?php echo getData() ?>
       </div>
         
     </div>
