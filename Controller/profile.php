@@ -46,15 +46,15 @@ function getDataFromGithub(){
 }
 
 function getData(){
-	unset($_SESSION['username']);
-	if(!isset($_SESSION['username'])){
+	if(!isset($_SESSION['lastUser'])){
+		$_SESSION['lastUser'] = 'notloggedin';
+	}
+
+	$err = 0;
+	if($_SESSION['lastUser'] != $_SESSION['username']){
+		$_SESSION['lastUser'] = $_SESSION['username'];
 		$_SESSION['username'] = getUsername($_SESSION['userGmail']);
 		$err = getDataFromGithub();
-	}else if(isset($_SESSION['ID'])){
-		if($_SESSION['ID'] != $_SESSION['username']){
-			$_SESSION['username'] = getUsername($_SESSION['userGmail']);
-			$err = getDataFromGithub();
-		}
 	}
 
 	if($err == 1){
