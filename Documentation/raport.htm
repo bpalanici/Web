@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <title>TeaSk</title>
+    <link href="scolarly-style.css" type="text/css" rel="stylesheet">
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <article>
+        <header><h1>Raport - TeaSk</h1></header>
+        <div role="contentinfo">
+            <ol role="directory">
+                <li><a href="#abstract">1. Abstract</a></li>
+                <li><a href="#introducere">2. Introducere</a></li>
+                <li><a href="#module">3. Module</a></li>
+                <ol role="directory">
+                    <li><a href="#loginRegister">3.1 Login/Register</a></li>
+                    <li><a href=#extraction>3.2 Extragerea datelor profilului de Git</a></li>
+                    <li><a href=#show>3.3 Prelucrarea statisticilor</a></li>
+                    <li><a href=#events>3.4 Evenimente</a></li>
+                </ol>
+                <li><a href="#tehnologii">4. Tehnologii folosite</a></li>
+                <li><a href="#detalii">5. Detalii de inmplementare</a></li>
+                <ol role="directory">
+                    <li><a href="#repartizare">5.1 Use case general al aplicatiei</a></li>
+                    <li><a href=#detalii-bd>5.2 Schema bazei de date</a></li>
+                </ol>
+                <li><a href="#bibliografie">6. Referințe</a></li>
+            </ol>
+            <dt>Authors</dt>
+            <dd>Simion Andrei, Palanici Bogdan, Torok Draniel</dd>
+        </div>
+        
+        <section id="abstract" typeof="sa:Abstract" role="doc-abstract">
+            <h2>1. Abstract</h2>
+            <p>TeaSk este o aplicatie web pentru oameni interesati de imbunatatirea programarii in diferite limbaje. Acest document descrie arhitectura aplicației, funcționalitățile aplicației și tehnologiile folosite în cadrul procesului de dezvoltare.</p>
+        </section>
+        
+        <section id="introducere" role="doc-introduction">
+            <h2>2. Introducere</h2>
+            <p>In zilele noastre programatorii isi imbunatatesc cunostintele legate de limbajele de programare si de codarea acestora prin practica la locul de munca. In general, aceasta modalitate nu este suficienta pentru a avansa pe termen lung, sau nu este accesibila tuturor oamenilor care vor sa invete sau sa aprofundeze cunostintele, este nevoie de o alta sursa de informare.</p>
+            <p>Scopul principal al aplicatiei este de a oferi statistici legate de nivelul curent al utilizatorului, dar si de evolutia sa in timp al nivelului de cunostinte in diferite limbaje de programare. Deoarece sursele de informare exista in cantitati mult prea mari pe internet, aplicatia noastra ofera, de asemenea, o metoda de a centraliza informatii legate de anumite evenimente in care acestia vor putea invata lucruri noi, sau exersa ceea ce stiu deja, primind feedback corespunzator.
+            </p>
+
+            <p>Obiectivele noastre sunt:</p>
+            <ul>
+                <li>Furnizarea unei statistici legate de nivelul utilizatorului in limbajele de programare dorite.</li>
+                <li>Oferirea unei liste de evenimente relevante pentru a ajuta utilizatorul sa aprofundeze limbajele dorite.</li>
+                <li>Compatibilitatea aplicației cu Web browsere moderne.</li>
+            </ul>
+            
+            <p>Mai multe detalii se găsesc în <a href="#ref-proiecte">lista de proiecte</a>.</p>
+        </section>
+        
+        <section id="module">
+            <h2>3. Module </h2>
+            <section id="loginRegister">
+                <h3>3.1 Login / Register</h3>
+                <p>Utilizatorii isi vor putea accesa contul folosind contul de Gmail. Daca un utilizator care are cont de gmail nu are cont pe site-ul nostru, va fi redirectionat spre pagina de intregistrare. In acest caz, detaliile noului cont vor fi pastrate in baza de date.                    
+                </p>
+            </section>
+            <section id="extraction">
+                <h3>3.2 Extragerea datelor profilului de Git</h3>
+                <p>Aceasta componenta va extrage date legate de profilul si activitatea de pe GitHub al utilizatorului si le va introduce in baza de date pentru a putea fi prelucrate </p>
+            </section>
+            <section id="show">
+                <h3>3.3 Prelucrarea statisticilor</h3>
+                <p>Aceasta componenta va prelucra datele din baza de date si va afisa statistici relevante utilizatorului legate de cunostintele actuale ale limbajelor.</p>
+            </section>
+            <section id="events">
+                <h3>3.4 Evenimente</h3>
+                <p>Aceasta componenta va prelucra datele referitoare la evenimentele la care utilizatorul a participat, si le va afisa pe cele mai relevante.</p>
+            </section>
+        </section>
+        
+        <section id="tehnologii">
+            <h2>4. Tehnologii folosite</h2>
+            
+            <ul>
+                <li>HTML5 si CSS3 pentru front-end.</li>
+                <li>JavaScript</li>
+                <li>MySQL pentru baza de date deoarece este open-source și des utilizat.</li>
+                <li>PHP 7 ca limbaj de scriptare deoarece:</li>
+                <ul>
+                    <li>are suport pentru Unicode</li>
+                    <li>are suport pentru variabile tari tipizate.</li>
+                </ul>
+                <li>Api-ul de la Git pentru a extrage datele necesare analizei statistice.</li>
+                <li>Api-ul de la Google pentru logarea pe site folosind contul de Gmail si serviciul de logare de la Google deoarece:</li>
+                <ul>
+                    <li>parolele conturilor sunt retinute in mod sigur, criptat</li>
+                    <li>este performant si sigur din punct de vedere al disponibilitatii</li>
+                </ul>
+            </ul>
+        </section>
+        
+        <section id="detalii">
+            <h2>5. Detalii de implementare</h2>
+            <p>Pentru a implementa proiectul nostru, vom folosi tehnologiile mentionate anterior, iar ca si arhitectura, vom folosi Model View Controller, pentru a separa proiectul si a lucra modular. Vom folosi si arhitectura REST(REpresentational State Transfer) deoarece vom comunica cu GitHub prin intermediul Api-ului.</p>
+            <ul>
+                <li>Modelul reprezinta datele retinute in baza de date, si restrictiile asupra acestora. Vom folosi MySql pentru a stoca datele. Vor exista datele clientului referitoare la contul sau, dar si statistici preluate de pe GitHub cu ajutorul Api-ului oferit. Prelucrarea datelor se va face cu ajutorul unor Http requests. </li>
+                <li>View-ul reprezinta partea de front-end, partea de interactiune cu utilizatorul. Este reprezentata de pagini html generate dinamic.</li>
+                <li>Controllerul reprezinta legatura dintre front-end si baza de date, acesta prelucrand informatiile existente bazate pe cererile provenite de la client. Pentru a le procesa vom avea un server Php, in care posibil vom integra JavaScript sau alte limbaje utile. Acesta se va folosi de tokenul generat la log in pentru a mentine userul conectat si a gestiona cererile.</li>
+                <figure typeof="sa:image">
+                    <img src="MVC-Architecture.png" width="100%">
+                </figure>
+                
+            </ul>
+            <section id="repartizare">
+                <h3>5.1 Use case general al aplicatiei</h3>
+                <p>Utilizatorul intra pe pagina principala, apoi pe pagina de login. Deoarece loginul se realizeaza prin contul de gmail, utilizatorul va trebui sa se autentifice cu contul sau de gmail. Apoi avem 2 posibilitati:</p>
+                <ul>
+                    <li>Utilizatorul Nu este inregistrat, si va fi redirectionat spre pagina de inregistrare, in care va trebuie sa completeze informatii legate de cont(introducerea unui link catre un cont de Git Hub valid si  limbajele dorite)</li>
+                    <li>Utilizatorul este inregistrat</li>
+                </ul>
+                <p>Pe pagina principala i se va afisa utilizatorului statisticile referitoare la fiecare limbaj, dar si evolutia sa(reprezentata prin scor) in ultimul timp. Acesta va putea actualiza statisticile legate de contul sau printr-un buton de update, altfel, acel update se face periodic. (o data pe ora / zi / saptamana / luna)</p>
+                <p>Utilizatorul va putea accesa pagina cu recomandari,  va putea aplica la evenimentele dorite, va putea revedea evenimentele la care a participat in trecut si va putea da un scor la acestea. Bazat pe acel scor dar si pe evolutia reala rezultata din statisticile prealuate de pe GitHub, si pe scorul acelui utilizator la limbajul respectiv vor fi afisate noi evenimente relevante utilizatorului.</p>
+                <p></p>
+            </section>
+            
+            <section id="detalii-bd">
+                <h3>5.2 Schema bazei de date</h3>
+                <p>Aplicația fiind simplă, schema bazei de date este de asemenea simplă (4NF). Figura următoare resprezintă diagrama Entity-Relationship a tabelelor bazei de date.</p>
+                <figure typeof="sa:image">
+                    <img src="BdDiagram.jpg" width="100%">
+                </figure>
+            </section>
+            
+        </section>
+        
+        <section id="bibliografie">
+            <h2>6. Referințe</h2>
+            <dl>
+                <dt id="ref-proiecte">Lista de proiecte</dt>
+                <dd property="schema:citation" typeof="schema:ScholarlyArticle">
+                    <cite propery="schema:name"><a href="https://teaching.alexcoman.com/laboratoare/web/proiecte">Web Technologies - Project Proposals</a></cite>
+                </dd>
+                
+                <dt id="ref-xampp">GitHub Api</dt>
+                <dd property="schema:citation" typeof="schema:ScholarlyArticle">
+                    <cite propery="schema:name"><a href="https://developer.github.com/v3">GitHub Api</a></cite>
+                </dd>
+                
+                <dt id="ref-xampp">Autentificare Gmail</dt>
+                <dd property="schema:citation" typeof="schema:ScholarlyArticle">
+                    <cite propery="schema:name"><a href="https://developers.google.com/gmail/api/auth/about-auth">Gmail Api</a></cite>
+                </dd>
+                
+                <dt id="ref-xampp">Php 7</dt>
+                <dd property="schema:citation" typeof="schema:ScholarlyArticle">
+                    <cite propery="schema:name"><a href="https://www.w3schools.com/php7/">Php 7</a></cite>
+                </dd>
+                <dt id="ref-xampp">Javascript</dt>
+                <dd property="schema:citation" typeof="schema:ScholarlyArticle">
+                    <cite propery="schema:name"><a href="https://www.w3schools.com/js/">Javascript</a></cite>
+                </dd>
+            </dl>
+        </section>
+    </article>
+</body>
+
+</html>
