@@ -5,6 +5,10 @@ require_once("Model/profileModel.php");
 // Seteaza variabilele corespunzatoare din sesiune 
 function getDataFromGithub(){
 	$repos = getRepos();
+	if(isset($repos['message'])){
+		return 1;
+	}
+
 	$_SESSION['length'] = 0;
 	$_SESSION['avatar_url'] = $repos[0]['owner']['avatar_url'];
 	
@@ -24,22 +28,37 @@ function getDataFromGithub(){
 		}
 
 		$stats = getStatistics($repo);
-		$_SESSION['repo_' . $index]['additions'] = $stats[0]['weeks'][0]['a'];
-		$_SESSION['repo_' . $index]['deletions'] = $stats[0]['weeks'][0]['d'];
-		$_SESSION['repo_' . $index]['commits'] = $stats[0]['weeks'][0]['c'];
+		$_SESSION['repo_' . $index]['additions'] = 0;
+		$_SESSION['repo_' . $index]['deletions'] = 0;
+		$_SESSION['repo_' . $index]['commits'] = 0;
+		if (is_null($stats)){	
+			continue;
+		}
+
+		foreach($stats as $i => $stat){
+			$_SESSION['repo_' . $index]['additions'] += $stats[$i]['weeks'][0]['a'];
+			$_SESSION['repo_' . $index]['deletions'] += $stats[$i]['weeks'][0]['d'];
+			$_SESSION['repo_' . $index]['commits'] += $stats[$i]['weeks'][0]['c'];
+		}
  	}
+
+ 	return 0;
 }
 
 function getData(){
-	//unset($_SESSION['username']);
+	unset($_SESSION['username']);
 	if(!isset($_SESSION['username'])){
 		$_SESSION['username'] = getUsername($_SESSION['userGmail']);
-		getDataFromGithub();
+		$err = getDataFromGithub();
 	}else if(isset($_SESSION['ID'])){
 		if($_SESSION['ID'] != $_SESSION['username']){
 			$_SESSION['username'] = getUsername($_SESSION['userGmail']);
-			getDataFromGithub();
+			$err = getDataFromGithub();
 		}
+	}
+
+	if($err == 1){
+		return "Rate limit exceeded..";
 	}
 
 	$result = "";
