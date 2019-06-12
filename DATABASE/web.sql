@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2019 at 01:40 AM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.3
+-- Generation Time: Jun 12, 2019 at 01:35 AM
+-- Server version: 10.1.39-MariaDB
+-- PHP Version: 7.3.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -44,6 +44,21 @@ CREATE TABLE `cfstatistics` (
 
 INSERT INTO `cfstatistics` (`id`, `usergmail`, `cfusername`, `nrAccepted`, `nrSolved`, `date`, `nrSubmissions`) VALUES
 (11, 'bpalanici1337@gmail.com', 'TOURIST', 1357, 1133, '2019-06-12', 2015);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `scores`
+--
+
+CREATE TABLE `scores` (
+  `id` int(15) NOT NULL,
+  `iteration` int(15) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `filename` varchar(255) NOT NULL,
+  `language` varchar(255) NOT NULL,
+  `score` double(15,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -96,6 +111,12 @@ ALTER TABLE `cfstatistics`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `scores`
+--
+ALTER TABLE `scores`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `userlanguages`
 --
 ALTER TABLE `userlanguages`
@@ -116,6 +137,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `cfstatistics`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `scores`
+--
+ALTER TABLE `scores`
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `userlanguages`
