@@ -5,114 +5,87 @@
 
 <!DOCTYPE html>
 <html lang = "en">
-  <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="CSS/eventsRecommendations-style.css">
-  <title>Profile</title>
-  </head>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="CSS/eventsRecommendations-style.css">
+        <title>Profile</title>
+    </head>
 
 <body>
+		<div class="topFlex">
+        <div class="imageTitle">
+            <a href="index.html" class="imageTitleImage" >
+                <img src="images/Logo.png" alt="Image does not exist" width="200px">
+            </a>
 
-<header>
-  	<div class="imageTitle">
-		<a href="index.html">
-			<img src="Images/Logo.png" alt = "img not found" class="imgHeader" height="100" width="150">
-		</a>
-		<div class="headerTitle">Events</div>
-  	<nav>
-  		<ul>
-  			<li>
-  				<a href="Controller/updateCfStatistics.php">
-  			    Update Cf Statistics
-  				</a>
-  			</li>
-  			<li>
-  				<a href="eventsRecommendations.php">
-  				Events and Suggestions
-  				</a>
-  			</li>
-  			<li>
-  				<a href="login.html">
-  						Log Out
-  				</a>
-  			</li>
-  		</ul>
-
-  	</nav>
+            <div class="titleText">
+                Technical Skill Enhancer 
+            </div>
+        </div>
     </div>
-</header>
-
 
 <section>
-  <div class="flexContainer">
-	 <div class="main">
-    <div class="list">
-        <div class="list-header">
-             <h2 class="list-title">Traininguri</h2>
-        </div>
-        <div class="card-list">
-            <div class="card">
-              <div class=flexInsideCard>
-              <a class="card-title">Front-End Yonder</a>
-              <button class="buttonCard"> Apply </button>
-              </div>
+<div class="flexContainer">
+    <div class="main competitions">
+        <div class="list">
+            <div class="list-header">
+                 <h2 class="list-title">Concursuri</h2>
             </div>
-            <div class="card">
-              <div class=flexInsideCard>
-              <a class="card-title">Back-End Endava</a>
-              <button class="buttonCard"> Apply </button>
-              </div>
-            </div>
+            <div class="card-list">
+                <div class="card">
+                  <div class=flexInsideCard>
+                      <a class="card-title">Front-End Yonder</a>
+                      <button class="buttonCard"> Apply </button>
+                  </div>
+                </div>
 
+                <div class="card">
+                    <div class=flexInsideCard>
+                      <a class="card-title">Back-End Endava</a>
+                      <button class="buttonCard"> Apply </button>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
-</div>
-<div class="main">
-  <div class="list">
-    <div class="list-header">
-         <h2 class="list-title">Evenimente</h2>
-    </div>
-    <div class="card-list">
-        <div class="card">
 
-          <div class=flexInsideCard>
-            <a class="card-title">Stagii pe bune 22.03.2019</a>
-            <button class="buttonCard"> Apply </button>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class=flexInsideCard>
-          <a class="card-title">FIIPractic 24.03.2019</a>
-          <button class="buttonCard"> Apply </button>
-          </div>
-        </div>
-        <?php 
-        echo controllerGetRecommendations();
-        ?>
-    </div>
-  </div>
-</div>
-<div class="main">
-    <div class="list">
-        <div class="list-header">
-             <h2 class="list-title">Repositories</h2>
-        </div>
-        <div class="card-list">
-            <div class="card">
-              <div class=flexInsideCard>
-              <a class="card-title">Git link 1</a>
-              <button class="buttonCard"> Get </button>
-              </div>
+    <div class="main events">
+        <div class="list">
+            <div class="list-header">
+                 <h2 class="list-title">Evenimente</h2>
             </div>
-            <div class="card">
-              <div class=flexInsideCard>
-              <a class="card-title">Git link 2</a>
-              <button class="buttonCard"> Get </button>
-              </div>
+            <div class="card-list">
+                <div class="card">
+                    <div class=flexInsideCard>
+                        <a class="card-title">Stagii pe bune 22.03.2019</a>
+                        <button class="buttonCard"> Apply </button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class=flexInsideCard>
+                        <a class="card-title">FIIPractic 24.03.2019</a>
+                        <button class="buttonCard"> Apply </button>
+                    </div>
+                </div>
+                <?php 
+                    echo controllerGetRecommendations();
+                ?>
             </div>
         </div>
-     </div>
+    </div>
+
+    <div class="main repos">
+        <div class="list">
+            <div class="list-header">
+                 <h2 class="list-title">Repositories</h2>
+            </div>
+
+            <div class="card-list">
+                <?php echo controllerGetRepos(); ?>
+            </div>
+         </div>
    </div>
 </div>
 </section>

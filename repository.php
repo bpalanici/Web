@@ -2,13 +2,15 @@
 <html lang = "en">
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="CSS/profile-style.css">
+        <link rel="stylesheet" type="text/css" href="CSS/repository-style.css">
         <title>Profile | Technical Skill Enhancer</title>
-        <?php
-            require_once("Controller/profile.php");
-            session_start();
-        ?>
     </head>
+
+    <?php
+        require_once("Controller/profile.php");
+        require_once("Controller/repository.php");
+        session_start();
+    ?>
 
     <body>
         <div class="main">
@@ -25,26 +27,23 @@
             </div>
 
             <div class="main-frame">
-                <div class="items">
-                    <?php echo getData() ?>
-                </div>
-
-                <div class="left-container">
+               <div class="left-container">
                     <div class="picture-container" id="picture-container">
-                        <div class="profile-pic" id="profile-pic"></div>
+                        <div class="profile-pic" id="profile-pic"><?php echo getPicture(); ?></div>
                         <div class="profile-text"><b>GMail</b> : <?= getVar("userGmail"); ?></div>
                         <div class="profile-text"><b>GitHub</b> : <?= getVar("username"); ?></div>
                         <div class="profile-text"><b>CodeForces</b> : <?= getVar("cfusername"); ?></div>
                         <div class="profile-text"><b>Nr of repos.</b> : <?= getVar("length"); ?></div>
                     </div>
 
-                    <form>
-                        <input class="button-events" type="button" value="See events nearby" onclick="window.location.href='eventsRecommendations.php'" />
-                    </form>
+                    <input class="button-events" type="button" value="See events nearby" onclick="window.location.href='eventsRecommendations.php'" />
+                    <input class="button-events profile" type="button" value="See profile" onclick="window.location.href='profile.php'" /> 
+                    <input class="button-events Logout" type="button" value="Logout" onclick="window.location.href='login.html'" />
+   
+                </div>
 
-                    <form>
-                        <input class="button-events Logout" type="button" value="Logout" onclick="window.location.href='login.html'" />
-                    </form>        
+                <div class="right-container">
+                    <?php echo getDataOfRepo() ?>
                 </div>
             </div>
         </div>

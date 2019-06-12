@@ -111,7 +111,8 @@ body{
     width: 30%;
     background-color: #221E1E;
     height: 280px;
-    margin: 20px;
+    margin: 10px;
+    margin-left: 30px;
     font-size: 30px;
     border-radius: 10px;
     color: white;
@@ -148,4 +149,16 @@ body{
 hr{
     background-color: #CEBA70;
     margin: 0px 5px 0px 5px;
+}
+
+@media only screen and (max-width: 1500px){
+    .item{
+        width: 40%;
+    }
+}
+
+@media only screen and (max-width: 1150px){
+    .item{
+        width: 100%
+    }
 }

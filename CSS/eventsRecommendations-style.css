@@ -43,7 +43,7 @@ table {
 }
 
 html {
-	background-image: url("../Images/background.jpg");
+    background-color: rgb(40,40,40); 
 	background-attachment: fixed;
 	background-size: 100% 100%;
 	color: white;
@@ -56,6 +56,77 @@ header {
 body{
 	margin: 0px;
 }
+
+.topFlex {
+    display: flex;
+    margin-bottom: 10px;
+    background-color: rgb(40,40,40); 
+    border-bottom: 1px solid ghostwhite;
+}
+
+.imageTitle {
+    display: flex;
+    flex: 100%;
+    margin-bottom: 20px;
+}
+
+.imageTitleImage {
+    flex: 10%;
+    height: 100px;
+    width: auto;
+}
+
+.imageTitleImage:hover{
+    opacity: 0.6;
+}
+
+.titleText{
+    font-family: Castellar, "Times New Roman";
+    font-size: 50px;
+    margin-top: 20px;
+    flex: auto;
+    color: white;
+}
+
+.flexContainer{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    margin: 50px;
+    border-radius: 15px;
+}
+
+.main{
+    flex: 1;
+    margin: 20px;
+}
+
+.competitions{
+    order: 3;
+}
+
+.events{
+    order: 1;
+}
+
+.repos{
+    order: 2;
+}
+
+.list-title {
+    font-family: Segoe UI;
+    cursor: pointer;
+    font-size: 30px;
+    color: ghostwhite;
+}
+
+.list-header {
+    position: relative;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 .imgHeader {
 	margin-top: 20px;
 	margin-left: 20px;
@@ -66,141 +137,55 @@ body{
 	margin-top: 20px;
 	margin-left: 50px;
 }
-.imageTitle {
-	display: flex;
-	font-family: Castellar, "Times New Roman";
-	font-size: 26px;
-	float: left;
-}
 
-nav {
-    float: right;
-}
-
-nav ul {
-    margin-top: 90px;
-    margin-right: 70px;
-}
-
-nav ul li {
-    display: inline-block;
-    margin-left: 40px;
-    font-size: 20px;
-    position: relative;
-}
-
-a{
-	text-decoration: none;
-	color: white;
-	text-transform: uppercase;
-}
-nav a:hover {
-
-	color: #000;
-}
-nav a::after{
-	content: '';
-	display: block;
-	height: 5px;
-	background-color: lightblue;
-	width: 0%;
-	top: 0;
-	transition: all ease-in-out 250ms;
-}
-
-nav a:hover::after{
-width: 100%;
-}
-
-.main {
-    padding: 10px;
-}
 .list {
-    border: 1px rgb(204, 204, 204);
-    border-radius: 10px;
-    display: inline-block;
-    max-height: 500px;
-    width: 420px;
-    background-color: yellow;
+    border-radius: 15px;
+    background-color: #221E1E; 
+}
 
-}
-.list-header {
-    padding: 8px 4px;
-    position: relative;
-    min-height: 19px;
-    display: block;
-    line-height: 18px;
-    text-align: center;
-}
-.list-title {
-    cursor: pointer;
-    display: inline;
-    font-size: 15px;
-    font-weight: bold;
-    line-height: 18px;
-    margin: 0px;
-    min-height: 19px;
-    min-width: 30px;
-    word-wrap: break-word;
-    color: rgb(77, 77, 77);
-}
-.card-list {
-    max-height: 445px;
-    overflow-y: auto;
-}
 .card {
     overflow: auto;
-    padding: 6px 8px 4px;
-
-    margin-bottom: 4px;
-    margin-left: 4px;
-
-    position: relative;
-    display: block;
     cursor: pointer;
-
-    font-size: 15px;
-    line-height: 30px;
+    margin: 10px;
+    padding: 10px;
 
     border: 1px solid gray;
     border-radius: 4px;
+    background-color: ghostwhite;
+}
 
-    width: 380px;
-    text-align: left;
-    background-color: white;
+.card-list{
+    overflow-y: auto;
+    max-height: 700px;
+    padding-bottom: 20px; 
 }
-.card-title {
-    color: rgb(77, 77, 77);
-    display: block;
-    font-weight: 400;
-    margin: 0px 0px 4px;
-    overflow: hidden;
-    text-decoration: none;
-    word-wrap: break-word;
-    background-color: transparent;
-}
-.flexContainer{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
 
-}
 .flexInsideCard{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
+
+.card-title {
+    color: black;
+    display: block;
+    margin-bottom: 10px;
+    font-family: Segoe UI;
+    font-size: 15px;
+}
+
+
 .buttonCard{
-    width: 60px;
-    height: 30px;
-    padding-top: 4px;
-    background-color: rgb(255, 100, 0);
-    border: none;
+    background-color: #4CAF50; /* Green */
     color: white;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 14px;
     text-align: center;
+    font-size: 15px;
+    font-family: Segoe UI;
+    height: 30px;
+    width: 60px;
 }
 .buttonCard:hover{
     background-color: rgb(255, 5, 0);

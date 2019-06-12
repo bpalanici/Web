@@ -90,4 +90,34 @@
 
     return $rez;
   }
+
+  function printRepos(){
+    $result = "";
+
+    if(!isset($_SESSION['length'])){
+      $repos = getRepos();
+      
+      foreach($repos as $index => $repo){
+        $result .= '<div class="card">
+                      <div class="flexInsideCard">
+                          <a class="card-title">' . $repos[$index]['name'] . '</a>
+                          <button class="buttonCard" onclick="window.location.replace(\'repository.php?id=' . $index . '\');"> Go </button>
+                      </div>
+                  </div>';
+      }
+    }else{
+      for($i = 0; $i < $_SESSION['length']; $i++){
+        $result .= '<div class="card">
+                      <div class="flexInsideCard">
+                          <a class="card-title">' . $_SESSION['repo_' . $i]['name'] . '</a>
+                          <button class="buttonCard" onclick="window.location.replace(\'repository.php?id=' . $i . '\');"> Go </button>
+                      </div>
+                  </div>';
+      }
+    }
+    
+
+    return $result;
+
+  }
 ?>
