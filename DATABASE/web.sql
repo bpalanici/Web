@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2019 at 01:40 AM
+-- Generation Time: Jun 12, 2019 at 08:07 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -43,7 +43,54 @@ CREATE TABLE `cfstatistics` (
 --
 
 INSERT INTO `cfstatistics` (`id`, `usergmail`, `cfusername`, `nrAccepted`, `nrSolved`, `date`, `nrSubmissions`) VALUES
-(11, 'bpalanici1337@gmail.com', 'TOURIST', 1357, 1133, '2019-06-12', 2015);
+(20, 'bpalanici1337@gmail.com', 'TOURIST', 1357, 1133, '2019-06-12', 2015),
+(21, 'bpalanici1337@gmail.com', 'TOURIST', 1357, 1133, '2019-06-12', 2015),
+(22, 'bpalanici1337@gmail.com', 'TOURIST', 1357, 1133, '2019-06-12', 2015),
+(23, 'bpalanici1337@gmail.com', 'TOURIST', 1357, 1133, '2019-06-12', 2015),
+(24, 'bpalanici1337@gmail.com', 'TOURIST', 1357, 1133, '2019-06-12', 2015),
+(25, 'bpalanici1337@gmail.com', 'TOURIST', 1357, 1133, '2019-06-12', 2015),
+(26, 'bpalanici1337@gmail.com', 'TOURIST', 1357, 1133, '2019-06-12', 2015),
+(27, 'bpalanici1337@gmail.com', 'TOURIST', 1357, 1133, '2019-06-12', 2015),
+(28, 'bpalanici1337@gmail.com', 'TOURIST', 1357, 1133, '2019-06-12', 2015);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `events`
+--
+
+CREATE TABLE `events` (
+  `ID` int(11) NOT NULL,
+  `usergmail` varchar(50) NOT NULL,
+  `eventname` varchar(200) NOT NULL,
+  `eventgroup` varchar(100) NOT NULL,
+  `eventdiff` int(11) NOT NULL DEFAULT '2',
+  `eventDate` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `events`
+--
+
+INSERT INTO `events` (`ID`, `usergmail`, `eventname`, `eventgroup`, `eventdiff`, `eventDate`) VALUES
+(1, 'a', 'a', 'a', 0, '2019-06-25'),
+(2, 'a', 'Codeforces Global Round 4', 'codeforces', 0, '2019-07-20'),
+(3, 'bpalanici1337@gmail.com', 'Translating requirements into code (Session 2)  ', 'Summer Practice @Centric ', 0, '2019-07-22');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `scores`
+--
+
+CREATE TABLE `scores` (
+  `id` int(15) NOT NULL,
+  `iteration` int(15) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `filename` varchar(255) NOT NULL,
+  `language` varchar(255) NOT NULL,
+  `score` double(15,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -96,6 +143,14 @@ ALTER TABLE `cfstatistics`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `events`
+--
+ALTER TABLE `events`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `Index_edentdiff` (`eventdiff`),
+  ADD KEY `index_eventname` (`eventname`);
+
+--
 -- Indexes for table `userlanguages`
 --
 ALTER TABLE `userlanguages`
@@ -115,7 +170,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `cfstatistics`
 --
 ALTER TABLE `cfstatistics`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
+--
+-- AUTO_INCREMENT for table `events`
+--
+ALTER TABLE `events`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `userlanguages`
