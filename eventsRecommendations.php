@@ -27,7 +27,7 @@
   				</a>
   			</li>
   			<li>
-  				<a href="eventsRecommendations.html">
+  				<a href="eventsRecommendations.php">
   				Events and Suggestions
   				</a>
   			</li>
