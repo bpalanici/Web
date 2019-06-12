@@ -43,6 +43,10 @@
                     </form>
 
                     <form>
+                        <input class="button-events" type="button" value="Export Statistics" onclick="window.location.href='Controller/export.php'" />
+                    </form>
+
+                    <form>
                         <input class="button-events Logout" type="button" value="Logout" onclick="window.location.href='login.html'" />
                     </form>        
                 </div>
