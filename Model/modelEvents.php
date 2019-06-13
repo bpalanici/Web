@@ -255,10 +255,10 @@
 		  			$eventDiff = 3;
 		  		if ($eddiff == 'experimentat')
 		  			$eventDiff = 4;
-		  		$r = rand(0, 100);
-		  		if ($r < 100 - 25 * abs($eventDiff - $rating))
+		  		$r = rand(1, 100);
+		  		if ($r <= 100 - 25 * abs($eventDiff - $rating))
 			    	$result .= '<div class="card"><div class=flexInsideCard>
-		                <form action="Controller/applytoevent.php" method="get"><a class="card-title"><input type="hidden" name="date" value="' . $evdate . '">' . $evdate . '</br> Group : <input type="hidden" name="group" value="' . $evgroup . '">' . $evgroup . '<input type="hidden" name="name" value="' . $evname . '">' . $evname. '</br></br>Difficulty : ' . $eddiff . '</a>
+		                <form action="Controller/applytoevent.php" method="get"><a class="card-title"><input type="hidden" name="date" value="' . $evdate . '">' . $evdate . '</br> Group : <input type="hidden" name="group" value="' . $evgroup . '">' . $evgroup . '<input type="hidden" name="name" value="' . $evname . '"></br></br>' . $evname. '</br></br>Difficulty : ' . $eddiff . '</a>
 		                <input type="hidden" name="diff" value="' . $eddiff . '">
 		            	<input type="submit" class="buttonCard" value="Apply">
 		          	</form></div></div>';
@@ -273,7 +273,7 @@
 
 	function getAllRecommendationsCf() {
 		$result = '';
-		$rating = getUserLastAvgLevel($_SESSION['getUserLastAvgCFLevel']);
+		$rating = getUserLastAvgCFLevel($_SESSION['cfusername']);
 		$conn = db::getConnection();
 		if ($stmt = $conn->prepare('SELECT eventname, eventgroup, eventdiff, eventdate FROM eventsall
 			where eventgroup = \'codeforces\' and (eventname, eventgroup, eventdate) not in (
@@ -292,8 +292,9 @@
 		  			$eventDiff = 3;
 		  		if ($eddiff == 'experimentat')
 		  			$eventDiff = 4;
-		  		$r = rand(0, 100);
-		  		if ($r < 100 - 25 * abs($eventDiff - $rating))
+		  		$r = rand(1, 100);
+		  		//echo $eventDiff . ' ' . $rating . '</br></br>';
+		  		if ($r <= 100 - 25 * abs($eventDiff - $rating))
 			    	$result .= '<div class="card"><div class=flexInsideCard>
 		                <form action="Controller/applytoevent.php" method="get"><a class="card-title"><input type="hidden" name="date" value="' . $evdate . '">' . $evdate . '</br> Group : <input type="hidden" name="group" value="' . $evgroup . '">' . $evgroup . '<input type="hidden" name="name" value="' . $evname . '">' . $evname. '</br></br>Difficulty : ' . $eddiff . '</a>
 		                <input type="hidden" name="diff" value="' . $eddiff . '">
@@ -309,6 +310,6 @@
 	}
 
 	//echo getUserLastAvgLevel('andreiarusoaie') . ' ' . getUserLastAvgCFLevel('TOURIST') ;
-
+	//getAllRecommendationsCf();
 
 ?>
