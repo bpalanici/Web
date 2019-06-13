@@ -21,6 +21,8 @@
             <div class="titleText">
                 Technical Skill Enhancer 
             </div>
+
+            <input class="button-profile" type="button" value="Check out your profile" onclick="window.location.href='profile.php'" />
         </div>
     </div>
 

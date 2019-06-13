@@ -91,24 +91,6 @@ iframe{
 	text-align: center;
 }
 
-.button-profile{
-	background-color: #4CAF50; /* Green */
-	color: ghostwhite;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-	text-align: center;
-	height: 80px;
-	width: 250px;
-	font-weight: 650;
-	font-family: Segoe UI;
-	font-size: 20px;
-	margin-top: 50px;
-
-	position: relative;
-	left: 40%;
-}
-
 a{
 	color: white;
 	font-size: 20px;
