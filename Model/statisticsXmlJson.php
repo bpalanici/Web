@@ -67,6 +67,37 @@
 		to_xml($xml, $data);
 		print $xml->asXML();
 		file_put_contents('../STATISTICS/Cfsxml.txt', $xml->asXML());
+
+		$data = array();
+		$counter = 0;
+		$conn = db::getConnection();
+
+		if ($stmt = $conn->prepare('select iteration, username, rawlink, filename, language, score from scores
+				    where username = ?')) {
+				$stmt->bind_param("s", $_SESSION['username']);
+			    $stmt->execute();
+			    $stmt->bind_result($iteration, $username, $rawlink, $filename, $language, $score);
+			    while ($stmt->fetch()) {
+			    	$data['k' . $counter]['iteration'] = $iteration;
+			    	$data['k' . $counter]['username'] = $username;
+			    	$data['k' . $counter]['rawlink'] = $rawlink;
+			    	$data['k' . $counter]['filename'] = $filename;
+			    	$data['k' . $counter]['language'] = $language;
+			    	$data['k' . $counter]['score'] = $score;
+			    	$counter++;
+			    }
+				$stmt->close();
+		}
+		else die(5);
+
+		file_put_contents('../STATISTICS/Scoresjson.txt', json_encode($data));
+
+		$xml = new SimpleXMLElement('<root/>');
+		to_xml($xml, $data);
+		print $xml->asXML();
+		file_put_contents('../STATISTICS/ScoresCfsxml.txt', $xml->asXML());
+
+
 		return 'ok';
 	}
 

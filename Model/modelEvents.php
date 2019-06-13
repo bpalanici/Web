@@ -10,6 +10,52 @@
 		return $dt1->diff($dt2)->format('%a d, %h h, %i min and %s s');
 	}
 
+	function getUserLastAvgLevel($username) {
+		$result = '';
+		$conn = db::getConnection();
+		if ($stmt = $conn->prepare('select avg(score) from scores where username = ? and iteration = ( SELECT max(iteration) from scores where username = ? )')) {
+		    $stmt->bind_param("ss", $username, $username);
+		    $stmt->execute();
+		    $stmt->bind_result($rez);
+		    $stmt->fetch();
+			$stmt->close();
+			$avgScore = $rez;
+		}
+		else return 2;
+		if ($avgScore < 11)
+			$result = 4;
+		if ($avgScore < 7.5)
+			$result = 3;
+		if ($avgScore < 5)
+			$result = 2;
+		if ($avgScore < 2.5)
+			$result = 1;
+		return $result;
+	}
+
+	function getUserLastAvgCFLevel($usergmail) {
+		$result = '';
+		$conn = db::getConnection();
+		if ($stmt = $conn->prepare('select nrsubmissions / nrsolved from cfstatistics where usergmail = ? and id = ( SELECT max(id) from cfstatistics where usergmail = ? )')) {
+		    $stmt->bind_param("ss", $usergmail, $usergmail);
+		    $stmt->execute();
+		    $stmt->bind_result($rez);
+		    $stmt->fetch();
+			$stmt->close();
+			$avgScore = $rez;
+		}
+		else return 2;
+		
+		$result = 1;
+		if ($avgScore < 2.5)
+			$result = 2;
+		if ($avgScore < 2.2)
+			$result = 3;
+		if ($avgScore < 2)
+			$result = 4;
+		return $result;
+	}
+
 	function isEventInDatabase($evname, $evgroup, $evdate) {
 		$conn = db::getConnection();
 		if ($stmt = $conn->prepare('SELECT count(*) FROM eventsall where eventname = ? &&
@@ -190,6 +236,7 @@
 
 	function getAllRecommendationsMeetup() {
 		$result = '';
+		$rating = getUserLastAvgLevel($_SESSION['username']);
 		$conn = db::getConnection();
 		if ($stmt = $conn->prepare('SELECT eventname, eventgroup, eventdiff, eventdate FROM eventsall
 			where eventgroup <> \'codeforces\' and (eventname, eventgroup, eventdate) not in (
@@ -199,12 +246,22 @@
 			$stmt->bind_param("s", $_SESSION['userGmail']);
 		    $stmt->execute();
 		    $stmt->bind_result($evname, $evgroup, $eddiff, $evdate);
-		    while ($stmt->fetch()) {
-		    	$result .= '<div class="card"><div class=flexInsideCard>
-	                <form action="Controller/applytoevent.php" method="get"><a class="card-title"><input type="hidden" name="date" value="' . $evdate . '">' . $evdate . '</br> Group : <input type="hidden" name="group" value="' . $evgroup . '">' . $evgroup . '<input type="hidden" name="name" value="' . $evname . '">' . $evname. '</br></br>Difficulty : ' . $eddiff . '</a>
-	                <input type="hidden" name="diff" value="' . $eddiff . '">
-	            	<input type="submit" class="buttonCard" value="Apply">
-	          	</form></div></div>';
+		    while ($stmt->fetch()) {		    	
+	    		if ($eddiff == 'incepator')
+		  			$eventDiff = 1;
+		  		if ($eddiff == 'mediu')
+		  			$eventDiff = 2;
+		  		if ($eddiff == 'avansat')
+		  			$eventDiff = 3;
+		  		if ($eddiff == 'experimentat')
+		  			$eventDiff = 4;
+		  		$r = rand(0, 100);
+		  		if ($r < 100 - 25 * abs($eventDiff - $rating))
+			    	$result .= '<div class="card"><div class=flexInsideCard>
+		                <form action="Controller/applytoevent.php" method="get"><a class="card-title"><input type="hidden" name="date" value="' . $evdate . '">' . $evdate . '</br> Group : <input type="hidden" name="group" value="' . $evgroup . '">' . $evgroup . '<input type="hidden" name="name" value="' . $evname . '">' . $evname. '</br></br>Difficulty : ' . $eddiff . '</a>
+		                <input type="hidden" name="diff" value="' . $eddiff . '">
+		            	<input type="submit" class="buttonCard" value="Apply">
+		          	</form></div></div>';
 		    }
 			$stmt->close();
 			if ($rez == 1)
@@ -216,6 +273,7 @@
 
 	function getAllRecommendationsCf() {
 		$result = '';
+		$rating = getUserLastAvgLevel($_SESSION['getUserLastAvgCFLevel']);
 		$conn = db::getConnection();
 		if ($stmt = $conn->prepare('SELECT eventname, eventgroup, eventdiff, eventdate FROM eventsall
 			where eventgroup = \'codeforces\' and (eventname, eventgroup, eventdate) not in (
@@ -226,11 +284,21 @@
 		    $stmt->execute();
 		    $stmt->bind_result($evname, $evgroup, $eddiff, $evdate);
 		    while ($stmt->fetch()) {
-		    	$result .= '<div class="card"><div class=flexInsideCard>
-	                <form action="Controller/applytoevent.php" method="get"><a class="card-title"><input type="hidden" name="date" value="' . $evdate . '">' . $evdate . '</br> Group : <input type="hidden" name="group" value="' . $evgroup . '">' . $evgroup . '<input type="hidden" name="name" value="' . $evname . '">' . $evname. '</br></br>Difficulty : ' . $eddiff . '</a>
-	                <input type="hidden" name="diff" value="' . $eddiff . '">
-	            	<input type="submit" class="buttonCard" value="Apply">
-	          	</form></div></div>';
+		    	if ($eddiff == 'incepator')
+		  			$eventDiff = 1;
+		  		if ($eddiff == 'mediu')
+		  			$eventDiff = 2;
+		  		if ($eddiff == 'avansat')
+		  			$eventDiff = 3;
+		  		if ($eddiff == 'experimentat')
+		  			$eventDiff = 4;
+		  		$r = rand(0, 100);
+		  		if ($r < 100 - 25 * abs($eventDiff - $rating))
+			    	$result .= '<div class="card"><div class=flexInsideCard>
+		                <form action="Controller/applytoevent.php" method="get"><a class="card-title"><input type="hidden" name="date" value="' . $evdate . '">' . $evdate . '</br> Group : <input type="hidden" name="group" value="' . $evgroup . '">' . $evgroup . '<input type="hidden" name="name" value="' . $evname . '">' . $evname. '</br></br>Difficulty : ' . $eddiff . '</a>
+		                <input type="hidden" name="diff" value="' . $eddiff . '">
+		            	<input type="submit" class="buttonCard" value="Apply">
+		          	</form></div></div>';
 		    }
 			$stmt->close();
 			if ($rez == 1)
@@ -239,5 +307,8 @@
 		else return 'Some db Error, try again';
 		return $result;
 	}
+
+	//echo getUserLastAvgLevel('andreiarusoaie') . ' ' . getUserLastAvgCFLevel('TOURIST') ;
+
 
 ?>
