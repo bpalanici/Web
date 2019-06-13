@@ -67,15 +67,18 @@ function getData(){
 	$result = "";
 	echo getPicture();
 	for($i = 0;$i < $_SESSION['length'];$i++){
+		$a = getVar2($i, 'additions');
+		$d = getVar2($i, 'deletions');
+		$c = getVar2($i, 'commits');
 		$result .= '<div class="item">
 			          <div class="item-language" onclick="window.location.replace(\'repository.php?id=' . $i . '\');">
 			            ' . $_SESSION['repo_' . $i]['name'] . '
 			          <hr>
 			          </div>
 			          <div class="item-list">
-			              <div class="info">Additions : ' . $_SESSION['repo_' . $i]['additions'] . '</div>
-			              <div class="info">Deletions : ' . $_SESSION['repo_' . $i]['deletions'] . '</div>
-			              <div class="info">Commits : ' . $_SESSION['repo_' . $i]['commits'] . '</div>
+			              <div class="info">Additions : ' . $a . '</div>
+			              <div class="info">Deletions : ' . $d . '</div>
+			              <div class="info">Commits : ' . $c . '</div>
 			              <div class="info">' . json_encode($_SESSION['repo_' . $i]['langs']) . '</div>
 			          </div>
 			      </div>';
@@ -98,5 +101,12 @@ function getVar($var){
 		return $_SESSION[$var];
 	}
 	return NULL;
+}
+
+function getVar2($id, $var){
+	if(isset($_SESSION['repo_' . $id][$var])){
+		return $_SESSION['repo_' . $id][$var];
+	}
+	return 0;
 }
 ?>

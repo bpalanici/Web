@@ -18,7 +18,7 @@ function controllerGetScores(){
 	if(isset($_GET['id'])){
 		$result = getScores($_GET['id']);
 		if($result == 1){
-			return giveError("We couldn't find a language that we support. Try a repo with python or java!");
+			return giveError("We couldn't find a language that we support. Try a repo with python or java. Sorry! :(");
 		}
 
 		return $result;

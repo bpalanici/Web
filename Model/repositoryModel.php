@@ -94,7 +94,8 @@ function getScores($id){
 						<b>URL</b> : ' . $_SESSION['repo_' . $id]['url'] . '<br>
 						<b>Name</b> : ' .$_SESSION['repo_' . $id]['name'] . '<br>
 					</div>
-					<hr>';
+					<hr>
+					The scores are like [GRADE]/10 : ';
 	$nrOfLinks = 0;
 	$sum = 0;
 	foreach($rawlink as $link => $score){
@@ -103,7 +104,7 @@ function getScores($id){
 		$pieces = explode("/", $link);
 
 		$result .= '<div class="link-score">
-						' . $pieces[count($pieces) - 1] . " ===> " . $score . '
+						-- ' . $pieces[count($pieces) - 1] . " ===> " . $score . '
 					</div>';
 	}
 	if($nrOfLinks == 0){
