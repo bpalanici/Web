@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="CSS/repository-style.css">
-        <title>Profile | Technical Skill Enhancer</title>
+        <title>Technical Skill Enhancer</title>
     </head>
 
     <?php
@@ -43,7 +43,7 @@
                 </div>
 
                 <div class="right-container">
-                    <?php echo getDataOfRepo() ?>
+                    <?php echo controllerGetScores(); ?>
                 </div>
             </div>
         </div>

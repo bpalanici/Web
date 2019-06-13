@@ -30,6 +30,7 @@
         <div class="list">
             <div class="list-header">
                  <h2 class="list-title">Concursuri</h2>
+                 <hr>
             </div>
             <div class="card-list">
                 <div class="card">
@@ -57,6 +58,7 @@
         <div class="list">
             <div class="list-header">
                  <h2 class="list-title">Evenimente</h2>
+                 <hr>
             </div>
             <div class="card-list">
                 <div class="card">
@@ -83,6 +85,7 @@
         <div class="list">
             <div class="list-header">
                  <h2 class="list-title">Repositories</h2>
+                 <hr>
             </div>
 
             <div class="card-list">

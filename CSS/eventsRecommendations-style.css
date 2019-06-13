@@ -160,6 +160,19 @@ body{
     padding-bottom: 20px; 
 }
 
+.card-list::-webkit-scrollbar {
+    width: 1em;
+}
+ 
+.card-list::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+ 
+.card-list::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
 .flexInsideCard{
     display: flex;
     flex-direction: row;
@@ -191,11 +204,8 @@ body{
     background-color: rgb(255, 5, 0);
 }
 
-@media only screen and (max-width: 1440px)  {
-    
-nav ul {
-    margin-top: 30px;
-    margin-right: 70px;
-}
-
+hr{
+    margin-bottom: 0;
+    margin-left: 10px;
+    margin-right: 10px;
 }

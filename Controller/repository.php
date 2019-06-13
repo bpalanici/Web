@@ -1,32 +1,30 @@
 <?php
 
-function getDataOfRepo(){
-	$err = 0;
+require_once('Model/repositoryModel.php');
 
+function giveError($msg){
+	return '<div class="error">
+				<div class="error-img">
+					<img src="Images/error.png" alt="Parameter invalid" width="200px">
+				</div>
+
+				<div class="error-msg">
+					' . $msg . '
+				</div>
+			</div>';
+}
+
+function controllerGetScores(){
 	if(isset($_GET['id'])){
-		if(isset($_SESSION['repo_' . $_GET['id']])){
-			$repo = $_SESSION['repo_' . $_GET['id']];
-			$url = $repo['url'];
-		}else{
-			$err = 1;
+		$result = getScores($_GET['id']);
+		if($result == 1){
+			return giveError("We couldn't find a language that we support. Try a repo with python or java!");
 		}
-	}else{
-		$err = 1;
+
+		return $result;
 	}
 
-	if($err == 1){
-		return '<div class="error">
-					<div class="error-img">
-						<img src="Images/error.png" alt="Parameter invalid" width="200px">
-					</div>
-
-					<div class="error-msg">
-						Something went wrong..
-					</div>
-				</div>';
-	}else{
-		return $url;
-	}
+	return giveError("No GET parameter in URL");
 }
 
 

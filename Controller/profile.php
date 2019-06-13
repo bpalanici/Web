@@ -15,6 +15,10 @@ function getDataFromGithub(){
 		$_SESSION['repo_' . $index]['name'] = $repo['name'];
 		$_SESSION['repo_' . $index]['url'] = $repo['url'];
 		$languages = getLanguages($repo);
+		if(isset($languages['message'])){
+			return 1;
+		}
+
 		$_SESSION['repo_' . $index]['langs'] = array();
 		$_SESSION['repo_' . $index]['bytes'] = array();
 		foreach($languages as $lang => $nrOfBytes){
@@ -22,6 +26,10 @@ function getDataFromGithub(){
 			array_push($_SESSION['repo_' . $index]['bytes'], $nrOfBytes);
 		}
 		$stats = getStatistics($repo);
+		if(isset($stats['message'])){
+			return 1;
+		}
+
 		$_SESSION['repo_' . $index]['additions'] = 0;
 		$_SESSION['repo_' . $index]['deletions'] = 0;
 		$_SESSION['repo_' . $index]['commits'] = 0;
@@ -29,20 +37,27 @@ function getDataFromGithub(){
 			continue;
 		}
 		foreach($stats as $i => $stat){
-			$_SESSION['repo_' . $index]['additions'] += $stats[$i]['weeks'][0]['a'];
-			$_SESSION['repo_' . $index]['deletions'] += $stats[$i]['weeks'][0]['d'];
-			$_SESSION['repo_' . $index]['commits'] += $stats[$i]['weeks'][0]['c'];
+			if(isset($stats[$i]['weeks'])){
+				$_SESSION['repo_' . $index]['additions'] += $stats[$i]['weeks'][0]['a'];
+				$_SESSION['repo_' . $index]['deletions'] += $stats[$i]['weeks'][0]['d'];
+				$_SESSION['repo_' . $index]['commits'] += $stats[$i]['weeks'][0]['c'];
+			}
 		}
  	}
  	return 0;
 }
 function getData(){
+	//echo $_SESSION['lastUser'];
+	//echo $_SESSION['username'];
+	//unset($_SESSION['lastUser']);
 	if(!isset($_SESSION['lastUser'])){
 		$_SESSION['lastUser'] = 'notloggedin';
 	}
+
 	$err = 0;
-	if($_SESSION['lastUser'] != $_SESSION['username']){
-		$_SESSION['lastUser'] = $_SESSION['username'];
+	$username = getUsername($_SESSION['userGmail']);
+	if($_SESSION['lastUser'] != $username){
+		$_SESSION['lastUser'] = $username;
 		$_SESSION['username'] = getUsername($_SESSION['userGmail']);
 		$err = getDataFromGithub();
 	}
