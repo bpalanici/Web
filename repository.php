@@ -38,7 +38,7 @@
 
                     <input class="button-events" type="button" value="See events nearby" onclick="window.location.href='eventsRecommendations.php'" />
                     <input class="button-events profile" type="button" value="See profile" onclick="window.location.href='profile.php'" /> 
-                    <input class="button-events Logout" type="button" value="Logout" onclick="window.location.href='login.html'" />
+                    <input class="button-events Logout" type="button" value="Logout" onclick="window.location.href='index.html'" />
    
                 </div>
 

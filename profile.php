@@ -38,17 +38,11 @@
                         <div class="profile-text"><b>Nr of repos.</b> : <?= getVar("length"); ?></div>
                     </div>
 
-                    <form>
                         <input class="button-events" type="button" value="See events nearby" onclick="window.location.href='eventsRecommendations.php'" />
-                    </form>
 
-                    <form>
-                        <input class="button-events" type="button" value="Export Statistics" onclick="window.location.href='Controller/export.php'" />
-                    </form>
+                        <input class="button-events Exports" type="button" value="Export Statistics" onclick="window.location.href='Controller/export.php'" />
 
-                    <form>
-                        <input class="button-events Logout" type="button" value="Logout" onclick="window.location.href='login.html'" />
-                    </form>        
+                        <input class="button-events Logout" type="button" value="Logout" onclick="window.location.href='index.html'" />      
                 </div>
             </div>
         </div>

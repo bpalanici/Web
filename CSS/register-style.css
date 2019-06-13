@@ -14,44 +14,35 @@ body{
 
 /* BEGINNING OF CONTAINERS */
 
-.container-header{
-	flex: 30%;
-	border-bottom: 1px solid DimGray;
-}
-
-.content-header {
+.topFlex {
 	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-between; 
-
-	font-size: 40px;
-	font-family: Segoe UI;
-	text-align: center;
+	margin-bottom: 10px;
+	background-color: rgb(40,40,40);
+	border-bottom: 1px solid white; 
 }
 
+.imageTitle {
+	display: flex;
+	flex: 100%;
+	margin-bottom: 20px;
+}
 
-.logo{
+.imageTitleImage {
 	flex: 10%;
-	width: 200px;
+	height: 100px;
+	width: auto;
 }
 
-.logo:hover {
-	cursor: pointer;
+.imageTitleImage:hover{
 	opacity: 0.6;
 }
 
-.Tab{
-	flex: 40%;
-	color: whitesmoke;
-	text-decoration: none;
-
-	padding-top: 50px;
-}
-
-.Tab:hover{
-	cursor: pointer;
-	opacity: 0.5;
+.titleText{
+	font-family: Castellar, "Times New Roman";
+	font-size: 50px;
+	margin-top: 20px;
+	flex: auto;
+	color: white;
 }
 
 .container-Register{
