@@ -40,6 +40,8 @@
 
                         <input class="button-events" type="button" value="See events nearby" onclick="window.location.href='eventsRecommendations.php'" />
 
+                        <input class="button-events" type="button" value="See events you went to" onclick="window.location.href='eventsParticipated.php'" />
+
                         <input class="button-events Exports" type="button" value="Export Statistics" onclick="window.location.href='Controller/export.php'" />
 
                         <input class="button-events Logout" type="button" value="Logout" onclick="window.location.href='index.html'" />      

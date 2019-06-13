@@ -1,5 +1,5 @@
 <?php
-  require_once('Controller/events.php');
+  require_once('Controller/eventsParticipated.php');
   session_start();
 ?>
 
@@ -36,7 +36,7 @@
             </div>
             <div class="card-list">
                 <?php 
-                    echo controllerGetRecommendationsCf();
+                    echo controllerGetCfVisited();
                 ?>
 
             </div>
@@ -51,24 +51,11 @@
             </div>
             <div class="card-list">
                 <?php 
-                    echo controllerGetRecommendationsMeetup();
+                    echo controllerGetMeetupVisited();
                 ?>
             </div>
         </div>
     </div>
-
-    <div class="main repos">
-        <div class="list">
-            <div class="list-header">
-                 <h2 class="list-title">Repositories</h2>
-                 <hr>
-            </div>
-
-            <div class="card-list">
-                <?php echo controllerGetRepos(); ?>
-            </div>
-         </div>
-   </div>
 </div>
 </section>
 </body>
